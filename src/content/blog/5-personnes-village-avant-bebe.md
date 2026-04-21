@@ -9,6 +9,7 @@ piliers:
   - Se préparer en couple
 featured: true
 thumbnailEmoji: "🤝"
+readingTime: "5 min"
 tags:
   - village parental
   - soutien grossesse Montréal

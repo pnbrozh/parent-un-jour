@@ -32,6 +32,7 @@ const blog = defineCollection({
     image: z.string().optional(),
     imageAlt: z.string().optional(),
     thumbnailEmoji: z.string().default('📖'),
+    readingTime: z.string().optional(),
     // Mots-clés SEO (invisibles sur le site, utilisés pour les meta et JSON-LD)
     tags: z.array(z.string()).default([]),
   }),
