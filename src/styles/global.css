@@ -200,6 +200,270 @@ section { padding: 100px 40px; }
   display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
 }
 
+/* =========================================================================
+   AXIS PAGES — shared sections used across "Le village" axis pages
+   (Créer son village, Couple & coparent, Le postnatal, etc.)
+   ========================================================================= */
+
+/* ===== CONSTAT (stats) ===== */
+.constat { background: var(--offwhite); }
+.constat-intro {
+  max-width: 720px; margin: 0 auto 60px;
+  text-align: center; font-size: 17px;
+  line-height: 1.7;
+}
+.constat-outro {
+  text-align: center; font-size: 16px;
+  max-width: 680px; margin: 20px auto 0;
+  line-height: 1.7;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px; margin-bottom: 40px;
+}
+.stat-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 36px 24px;
+  text-align: center;
+  border: 1px solid var(--sage-light);
+  transition: transform 0.3s;
+}
+.stat-card:hover { transform: translateY(-4px); }
+.stat-number {
+  font-family: 'Georgia', serif;
+  font-size: 42px; color: var(--terra);
+  font-weight: 700; margin-bottom: 8px;
+}
+.stat-label {
+  font-size: 14px; line-height: 1.5;
+  color: var(--slate);
+}
+.stat-source {
+  font-size: 11px; color: var(--sage);
+  margin-top: 8px; font-style: italic;
+}
+.stat-source a {
+  color: var(--sage); text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.3s;
+}
+.stat-source a:hover { color: var(--terra); }
+@media (max-width: 768px) {
+  .stats-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== VILLAGE-DEF / CATÉGORIES (6 cartes) ===== */
+.village-def { background: var(--sage-light); }
+.village-def .container { max-width: 900px; }
+.village-intro {
+  text-align: center; font-size: 17px;
+  max-width: 720px; margin: 0 auto 60px;
+  line-height: 1.7;
+}
+.village-categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.village-cat {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 32px 28px;
+  border: 1px solid transparent;
+  transition: all 0.3s;
+}
+.village-cat:hover {
+  border-color: var(--sage);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(92, 106, 115, 0.06);
+}
+.village-cat-icon {
+  font-size: 32px; margin-bottom: 12px; display: block;
+}
+.village-cat-title {
+  font-family: 'Georgia', serif;
+  font-size: 20px; color: var(--slate);
+  font-weight: 700; margin-bottom: 10px;
+}
+.village-cat-list {
+  font-size: 15px; line-height: 1.7;
+  color: var(--slate);
+}
+.village-cat-list span {
+  display: block;
+  padding: 3px 0;
+}
+.village-cat-list span::before {
+  content: ""; display: inline-block;
+  width: 6px; height: 6px;
+  background: var(--terra-soft);
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+@media (max-width: 768px) {
+  .village-categories { grid-template-columns: 1fr; }
+}
+
+/* ===== POURQUOI (texte + aside témoignage) ===== */
+.pourquoi { background: var(--offwhite); }
+.pourquoi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px; align-items: start;
+}
+.pourquoi-text { font-size: 16px; line-height: 1.75; }
+.pourquoi-text p { margin-bottom: 18px; }
+.pourquoi-text strong { color: var(--slate); font-weight: 700; }
+.pourquoi-aside {
+  background: var(--cream);
+  border-radius: 16px;
+  padding: 36px 32px;
+  border-left: 4px solid var(--terra);
+}
+.pourquoi-aside h3 {
+  font-family: 'Georgia', serif;
+  font-size: 20px; color: var(--terra);
+  margin-bottom: 16px;
+}
+.pourquoi-aside p {
+  font-size: 15px; line-height: 1.7;
+  margin-bottom: 12px;
+}
+.pourquoi-aside .temoignage {
+  font-style: italic; color: var(--sage);
+  font-size: 14px; margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--sage-light);
+}
+@media (max-width: 768px) {
+  .pourquoi-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== CHECKLIST INTERACTIVE ===== */
+.checklist-preview { background: var(--cream); }
+.checklist-container { max-width: 700px; margin: 0 auto; }
+.checklist-intro {
+  text-align: center; font-size: 17px;
+  margin-bottom: 40px; line-height: 1.7;
+}
+.checklist-group { margin-bottom: 32px; }
+.checklist-group-title {
+  font-family: 'Georgia', serif;
+  font-size: 18px; color: var(--sage);
+  font-weight: 700; margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--sage-light);
+}
+.checklist-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 10px 0;
+  font-size: 15px; line-height: 1.6;
+  cursor: pointer;
+}
+.checklist-box {
+  width: 20px; height: 20px;
+  border: 2px solid var(--sage);
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: all 0.2s;
+  display: flex; align-items: center; justify-content: center;
+}
+.checklist-box.checked {
+  background: var(--sage);
+  border-color: var(--sage);
+}
+.checklist-box.checked::after {
+  content: "✓"; color: white; font-size: 14px; font-weight: 700;
+}
+.checklist-item.checked-item .checklist-text {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+.checklist-cta { text-align: center; margin-top: 40px; }
+.checklist-cta p {
+  font-size: 14px; color: var(--sage);
+  margin-bottom: 16px;
+}
+
+/* ===== ARTICLES PREVIEW ===== */
+.articles { background: var(--offwhite); }
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.article-card {
+  background: var(--white);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--sage-light);
+  transition: all 0.3s;
+  text-decoration: none; color: var(--slate);
+  display: block;
+}
+.article-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(92, 106, 115, 0.08);
+  border-color: var(--terra);
+}
+.article-thumb {
+  height: 160px;
+  background: linear-gradient(135deg, var(--sage-light), var(--terra-light));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 48px;
+}
+.article-body { padding: 24px; }
+.article-tag {
+  font-size: 10px; letter-spacing: 2px;
+  color: var(--terra); text-transform: uppercase;
+  font-weight: 700; margin-bottom: 8px;
+}
+.article-title {
+  font-family: 'Georgia', serif;
+  font-size: 18px; color: var(--slate);
+  font-weight: 700; line-height: 1.3;
+  margin-bottom: 10px;
+}
+.article-excerpt {
+  font-size: 14px; line-height: 1.6;
+  color: var(--slate); opacity: 0.8;
+}
+.article-read {
+  display: inline-block; margin-top: 14px;
+  font-size: 13px; letter-spacing: 1px;
+  color: var(--terra); text-transform: uppercase;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  .articles-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== CTA SECTION (fin de page axe) ===== */
+.cta-section {
+  background: linear-gradient(160deg, var(--sage-light) 0%, var(--cream) 100%);
+  text-align: center;
+}
+.cta-section h2 {
+  font-family: 'Georgia', serif;
+  font-size: clamp(28px, 4vw, 40px);
+  color: var(--slate); font-weight: 400;
+  margin-bottom: 16px;
+}
+.cta-section .script {
+  font-family: 'La Belle Aurore', cursive;
+  font-size: 28px; color: var(--terra);
+  margin-bottom: 24px;
+}
+.cta-section p {
+  font-size: 17px; max-width: 600px;
+  margin: 0 auto 36px; line-height: 1.7;
+}
+.cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
 /* ===== FOOTER ===== */
 footer.site-footer {
   background: var(--offwhite);
