@@ -1,31 +1,31 @@
 ---
-// Shared top navigation
+const base = import.meta.env.BASE_URL;
 ---
 <nav class="site-nav">
-  <a href="/" class="logo" aria-label="Parent un jour">
+  <a href={base} class="logo" aria-label="Parent un jour">
     Parent <span class="un-jour">un jour</span>
   </a>
   <ul>
-    <li><a href="/">Accueil</a></li>
+    <li><a href={base}>Accueil</a></li>
     <li class="has-dd">
-      <a href="/#axes" class="dd-trigger">Le village <span class="chev">▾</span></a>
+      <a href={`${base}#axes`} class="dd-trigger">Le village <span class="chev">▾</span></a>
       <div class="dd-panel">
-        <a href="/le-village/creer-son-village/" class="dd-item">
+        <a href={`${base}le-village/creer-son-village/`} class="dd-item">
           <div class="dd-title">Créer son village</div>
           <div class="dd-sub">avant bébé, s'entourer</div>
         </a>
-        <a href="/le-village/couple-coparent/" class="dd-item">
+        <a href={`${base}le-village/couple-coparent/`} class="dd-item">
           <div class="dd-title">Couple &amp; coparent</div>
           <div class="dd-sub">s'organiser, se parler, charge mentale</div>
         </a>
-        <a href="/le-village/postnatal/" class="dd-item">
+        <a href={`${base}le-village/postnatal/`} class="dd-item">
           <div class="dd-title">Le postnatal</div>
           <div class="dd-sub">la matrescence, devenir parent</div>
         </a>
       </div>
     </li>
-    <li><a href="/le-journal/">Le journal</a></li>
-    <li><a href="/ressources/">Ressources</a></li>
+    <li><a href={`${base}le-journal/`}>Le journal</a></li>
+    <li><a href={`${base}ressources/`}>Ressources</a></li>
     <li><a href="https://instagram.com" class="cta-nav">Me suivre</a></li>
   </ul>
 </nav>

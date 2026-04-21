@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 <Layout title="Parent un jour — Le village">
 
@@ -37,7 +38,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="container">
       <div class="who-grid">
         <div class="who-image">
-          <img src="/assets/pascaline.jpg" alt="Pascaline avec sa famille" />
+          <img src={`${base}assets/pascaline.jpg`} alt="Pascaline avec sa famille" />
         </div>
         <div class="who-text">
           <div class="section-label key">La voix derrière le village</div>
@@ -106,7 +107,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
       <div class="axes-grid">
 
-        <a href="/le-village/creer-son-village/" class="axis-card">
+        <a href={`${base}le-village/creer-son-village/`} class="axis-card">
           <div class="axis-num">01</div>
           <h3>Créer son village</h3>
           <div class="axis-sub">avant bébé, s'entourer</div>
@@ -114,7 +115,7 @@ import Layout from '../layouts/Layout.astro';
           <span class="axis-link">Explorer</span>
         </a>
 
-        <a href="/le-village/couple-coparent/" class="axis-card">
+        <a href={`${base}le-village/couple-coparent/`} class="axis-card">
           <div class="axis-num">02</div>
           <h3>Couple &amp; coparent</h3>
           <div class="axis-sub">s'organiser, se parler, charge mentale</div>
@@ -122,7 +123,7 @@ import Layout from '../layouts/Layout.astro';
           <span class="axis-link">Explorer</span>
         </a>
 
-        <a href="/le-village/postnatal/" class="axis-card">
+        <a href={`${base}le-village/postnatal/`} class="axis-card">
           <div class="axis-num">03</div>
           <h3>Le postnatal</h3>
           <div class="axis-sub">la matrescence, devenir parent</div>
@@ -181,7 +182,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
       <p class="ressources-note">
         Livres, podcasts, comptes inspirants &amp; plus —
-        <a href="/ressources/" class="ressources-more">découvrir toutes les ressources →</a>
+        <a href={`${base}ressources/`} class="ressources-more">découvrir toutes les ressources →</a>
       </p>
     </div>
   </section>
