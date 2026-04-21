@@ -4,8 +4,10 @@ description: "Sage-femme, accompagnante, voisin·e de confiance — qui sont les
 publishDate: 2026-04-21
 axis: creer-son-village
 axisLabel: "Créer son village"
-pilier: "Se préparer en couple"
-featured: false
+piliers:
+  - Le village
+  - Se préparer en couple
+featured: true
 thumbnailEmoji: "🤝"
 tags:
   - village parental

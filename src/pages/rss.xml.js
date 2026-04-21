@@ -16,7 +16,7 @@ export async function GET(context) {
         description: post.data.description,
         pubDate: post.data.publishDate,
         link: `/le-journal/${post.id}/`,
-        categories: [post.data.axisLabel, ...(post.data.tags ?? [])],
+        categories: [...post.data.piliers, ...(post.data.tags ?? [])],
         author: post.data.author,
       })),
     customData: `<language>fr-CA</language>`,

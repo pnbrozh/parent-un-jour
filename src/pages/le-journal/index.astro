@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { PILIERS } from '../../content.config';
 
 const base = import.meta.env.BASE_URL;
 
@@ -10,23 +11,12 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
 const featured = posts.find((p) => p.data.featured);
 const others = posts.filter((p) => p !== featured);
 
-const axes = [
-  { key: 'creer-son-village', label: 'Créer son village' },
-  { key: 'couple-coparent',   label: 'Le couple' },
-  { key: 'postnatal',         label: 'Le postnatal' },
-] as const;
-
-// Regroupement par axe pour l'affichage
-const byAxis = Object.fromEntries(
-  axes.map(({ key }) => [key, others.filter((p) => p.data.axis === key)])
-) as Record<string, typeof others>;
-
 const formatDate = (d: Date) =>
   d.toLocaleDateString('fr-CA', { year: 'numeric', month: 'long', day: 'numeric' });
 ---
 <Layout
   title="Le journal — Parent un jour"
-  description="Le journal de Parent un jour — articles sourcés scientifiquement sur la préparation au village, le couple après bébé, le postnatal et la santé mentale périnatale."
+  description="Le journal de Parent un jour — articles sourcés scientifiquement sur la préparation au village, le couple après bébé, le postnatal et la parentalité au Québec."
 >
 
   <!-- ===== HERO ===== -->
@@ -53,7 +43,7 @@ const formatDate = (d: Date) =>
             <span class="featured-emoji">{featured.data.thumbnailEmoji}</span>
           </div>
           <div class="featured-content">
-            <div class={`tag-cat ${featured.data.axis}`}>{featured.data.axisLabel}</div>
+            <div class="tag-cat">{featured.data.piliers[0]}</div>
             <h2>{featured.data.title}</h2>
             <p>{featured.data.description}</p>
             <span class="article-read">Lire l'article →</span>
@@ -63,51 +53,51 @@ const formatDate = (d: Date) =>
     </section>
   )}
 
-  <!-- ===== FILTRES ===== -->
+  <!-- ===== FILTRES (par pilier) ===== -->
   <section class="journal-filters">
     <div class="container">
-      <div class="filter-bar" role="tablist" aria-label="Filtrer les articles par axe">
+      <div class="filter-bar" role="tablist" aria-label="Filtrer les articles par pilier">
         <button type="button" class="filter-tab active" data-filter="all" role="tab" aria-selected="true">Tous</button>
-        {axes.map(({ key, label }) => (
-          <button type="button" class="filter-tab" data-filter={key} role="tab" aria-selected="false">{label}</button>
+        {PILIERS.map((pilier) => (
+          <button type="button" class="filter-tab" data-filter={pilier} role="tab" aria-selected="false">{pilier}</button>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ===== ARTICLES PAR AXE ===== -->
+  <!-- ===== GRILLE D'ARTICLES ===== -->
   <section class="journal-list">
     <div class="container">
-      {axes.map(({ key, label }) => {
-        const axisPosts = byAxis[key];
-        if (axisPosts.length === 0) return null;
-        return (
-          <div class="journal-group" data-axis-group={key}>
-            <h2 class="journal-axis-title">{label}</h2>
-            <div class="journal-grid">
-              {axisPosts.map((post) => (
-                <a href={`${base}le-journal/${post.id}/`} class="journal-card" data-axis={post.data.axis}>
-                  <div class="journal-thumb" data-axis={post.data.axis}>
-                    <span class="journal-emoji">{post.data.thumbnailEmoji}</span>
-                  </div>
-                  <div class="journal-card-body">
-                    <div class={`tag-cat ${post.data.axis}`}>{post.data.axisLabel}</div>
-                    <h3>{post.data.title}</h3>
-                    <p>{post.data.description}</p>
-                    <div class="journal-meta-line">
-                      <time datetime={post.data.publishDate.toISOString()}>{formatDate(post.data.publishDate)}</time>
-                    </div>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-        );
-      })}
-
-      {posts.length === 0 && (
-        <p class="journal-empty">Aucun article publié pour le moment — les premiers arrivent bientôt.</p>
+      {others.length > 0 ? (
+        <div class="journal-grid">
+          {others.map((post) => (
+            <a
+              href={`${base}le-journal/${post.id}/`}
+              class="journal-card"
+              data-piliers={post.data.piliers.join('|')}
+            >
+              <div class="journal-thumb" data-axis={post.data.axis}>
+                <span class="journal-emoji">{post.data.thumbnailEmoji}</span>
+              </div>
+              <div class="journal-card-body">
+                <div class="tag-cat">{post.data.piliers[0]}</div>
+                <h3>{post.data.title}</h3>
+                <p>{post.data.description}</p>
+                <div class="journal-meta-line">
+                  <time datetime={post.data.publishDate.toISOString()}>{formatDate(post.data.publishDate)}</time>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      ) : (
+        !featured && (
+          <p class="journal-empty">Aucun article publié pour le moment — les premiers arrivent bientôt.</p>
+        )
       )}
+      <p class="journal-empty" id="journal-no-results" hidden>
+        Aucun article pour ce pilier pour le moment.
+      </p>
     </div>
   </section>
 
@@ -130,17 +120,28 @@ const formatDate = (d: Date) =>
 </Layout>
 
 <script is:inline>
+  const noResults = document.getElementById('journal-no-results');
   document.querySelectorAll('.filter-tab').forEach((tab) => {
     tab.addEventListener('click', () => {
       const filter = tab.dataset.filter;
+
       document.querySelectorAll('.filter-tab').forEach((t) => {
         t.classList.toggle('active', t === tab);
         t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
       });
-      document.querySelectorAll('[data-axis-group]').forEach((group) => {
-        const match = filter === 'all' || group.dataset.axisGroup === filter;
-        group.style.display = match ? '' : 'none';
+
+      let visibleCount = 0;
+      document.querySelectorAll('.journal-card').forEach((card) => {
+        const piliers = (card.dataset.piliers || '').split('|');
+        const match = filter === 'all' || piliers.includes(filter);
+        card.style.display = match ? '' : 'none';
+        if (match) visibleCount++;
       });
+
+      // Affiche/masque le message "aucun résultat"
+      if (noResults) {
+        noResults.hidden = filter === 'all' || visibleCount > 0;
+      }
     });
   });
 </script>
