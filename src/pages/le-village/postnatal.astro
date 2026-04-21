@@ -1,0 +1,338 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+<Layout
+  title="Le postnatal — Parent un jour"
+  description="Le postnatal, c'est ce grand bouleversement qu'on traverse dans le corps, dans la tête et dans le coeur. Parlons-en — ensemble et sans jugement."
+>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="label">Parent un jour</div>
+      <h1>Le postnatal</h1>
+      <div class="script-line">devenir parent, pour vrai</div>
+      <p class="tagline">
+        On prépare l'accouchement, on prépare la chambre — mais personne ne nous prépare
+        vraiment à ce qui vient après. Le postnatal, c'est ce grand bouleversement qu'on
+        traverse dans le corps, dans la tête et dans le coeur. Et il mérite qu'on en parle.
+      </p>
+      <div class="buttons">
+        <a href="#visages" class="btn btn-primary">Découvrir</a>
+        <a href="#checklist" class="btn btn-outline">Ma check-list</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONSTAT SCIENTIFIQUE ===== -->
+  <section class="constat">
+    <div class="container">
+      <div class="section-label key">Ce que disent les chiffres</div>
+      <h2 class="section-title">Ce qu'on ne te dit pas avant</h2>
+      <div class="section-subtitle">les réalités derrière l'image parfaite</div>
+
+      <p class="constat-intro">
+        Le postnatal est une période de transformation intense. Ce n'est pas que du bonheur,
+        et ce n'est pas un échec de le vivre difficilement. C'est la réalité de la majorité des parents —
+        et la science le confirme.
+      </p>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">1 sur 5</div>
+          <div class="stat-label">femme vit une dépression postpartum</div>
+          <div class="stat-source">INSPQ, Portail d'information périnatale</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">61%</div>
+          <div class="stat-label">des parents sentent que s'occuper de leurs enfants demande plus d'énergie et de temps qu'ils en ont</div>
+          <div class="stat-source">ISQ, Enquête parentalité 2022</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">56%</div>
+          <div class="stat-label">des parents ressentent une pression liée à leurs choix parentaux</div>
+          <div class="stat-source">Réseau des CRP, sondage TACT 2026</div>
+        </div>
+      </div>
+
+      <p class="constat-outro">
+        Ces chiffres ne sont pas là pour faire peur. Ils sont là pour dire une chose simple :
+        <strong>si tu trouves ça dur, tu n'es pas seul·e, et ce n'est pas de ta faute.</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== CATÉGORIES ===== -->
+  <section class="village-def" id="visages">
+    <div class="container">
+      <div class="section-label key">Les visages du postnatal</div>
+      <h2 class="section-title">C'est quoi, le postnatal ?</h2>
+      <div class="section-subtitle">tout ce qui change quand bébé est là</div>
+
+      <p class="village-intro">
+        Le postnatal, c'est bien plus que les couches et les boires. C'est une transformation
+        profonde — du corps, de l'identité, du quotidien, des émotions. Nommer ces réalités,
+        c'est déjà commencer à les traverser.
+      </p>
+
+      <div class="village-categories">
+        <div class="village-cat">
+          <span class="village-cat-icon">🦋</span>
+          <h3 class="village-cat-title">La matrescence et la patrescence</h3>
+          <div class="village-cat-list">
+            <span>Devenir mère, devenir père — une naissance à soi aussi</span>
+            <span>L'identité qui se transforme, pour les deux</span>
+            <span>Le deuil de la vie d'avant</span>
+            <span>Les pères aussi traversent une mutation — et peu de ressources existent pour eux</span>
+          </div>
+        </div>
+
+        <div class="village-cat">
+          <span class="village-cat-icon">🌧️</span>
+          <h3 class="village-cat-title">Au-delà du baby blues</h3>
+          <div class="village-cat-list">
+            <span>Le baby blues&nbsp;: normal, temporaire, intense</span>
+            <span>La dépression postpartum&nbsp;: reconnaître les signes</span>
+            <span>L'anxiété qui ne lâche pas</span>
+            <span>Savoir quand et comment chercher de l'aide</span>
+          </div>
+        </div>
+
+        <div class="village-cat">
+          <span class="village-cat-icon">🫀</span>
+          <h3 class="village-cat-title">Le corps après bébé</h3>
+          <div class="village-cat-list">
+            <span>La récupération physique — chaque corps à son rythme</span>
+            <span>Le plancher pelvien, les cicatrices</span>
+            <span>Le rapport au corps qui change</span>
+            <span>Se donner du temps, pas de la pression</span>
+          </div>
+        </div>
+
+        <div class="village-cat">
+          <span class="village-cat-icon">🥣</span>
+          <h3 class="village-cat-title">L'alimentation&nbsp;: pour soi, pour bébé</h3>
+          <div class="village-cat-list">
+            <span>Se nourrir pour récupérer — énergie, hormones, fatigue</span>
+            <span>Les nutriments clés du postnatal</span>
+            <span>Nourrir bébé&nbsp;: sein, biberon, mixte — chaque chemin est valide</span>
+            <span>L'alimentation comme soin, pas comme pression</span>
+          </div>
+        </div>
+
+        <div class="village-cat">
+          <span class="village-cat-icon">😴</span>
+          <h3 class="village-cat-title">Le quotidien bouleversé</h3>
+          <div class="village-cat-list">
+            <span>Le sommeil — la grande épreuve</span>
+            <span>Le rythme qui n'existe plus</span>
+            <span>Sortir de chez soi, un défi logistique</span>
+            <span>Le 1er, le 2e, le 3e — chaque bébé change la dynamique</span>
+          </div>
+        </div>
+
+        <div class="village-cat">
+          <span class="village-cat-icon">👶</span>
+          <h3 class="village-cat-title">Bébé est là. Et maintenant&nbsp;?</h3>
+          <div class="village-cat-list">
+            <span>Comprendre ses besoins — chaque bébé est unique</span>
+            <span>Les pleurs, le sommeil, les «&nbsp;phases&nbsp;»</span>
+            <span>Vivre les premières séparations</span>
+            <span>Ressources fiables pour suivre son développement</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== POURQUOI EN PARLER ===== -->
+  <section class="pourquoi">
+    <div class="container">
+      <div class="section-label key">Pourquoi en parler</div>
+      <h2 class="section-title">En parler, c'est déjà prendre soin de soi</h2>
+      <div class="section-subtitle">briser le silence du postnatal</div>
+
+      <div class="pourquoi-grid">
+        <div class="pourquoi-text">
+          <p>On nous montre des images de bébés parfaits et de parents épanouis. La réalité, c'est qu'on peut aimer son bébé profondément et trouver ça incroyablement dur en même temps. <strong>Ces deux vérités coexistent.</strong></p>
+          <p>Beaucoup de parents traversent le postnatal en silence — par peur d'être jugé·es, par culpabilité, ou simplement parce que personne ne leur a dit que c'était <strong>normal</strong> de vivre tout ça.</p>
+          <p>La matrescence — cette transformation identitaire profonde qu'on vit en devenant parent — est un concept encore méconnu. Pourtant, elle touche tout le monde&nbsp;: la mère, le père, le coparent. Chacun·e traverse sa propre mutation.</p>
+          <p>Nommer ce qu'on vit, savoir que d'autres le vivent aussi, et connaître les ressources qui existent&nbsp;: c'est le premier pas pour <strong>traverser le postnatal avec plus de douceur</strong>.</p>
+        </div>
+        <aside class="pourquoi-aside">
+          <h3>Tu n'es pas censé·e tout savoir</h3>
+          <p>La société nous dit qu'on devrait savoir instinctivement comment être parent. En réalité, c'est un apprentissage — et il se fait dans la fatigue, le doute, et les pleurs (les tiens aussi).</p>
+          <p>Le postnatal, ce n'est pas une épreuve à endurer seul·e. C'est une période qui demande du soutien, de l'information, et beaucoup de <strong>bienveillance envers soi-même</strong>.</p>
+          <div class="temoignage">«&nbsp;Les trois premiers mois, je souriais devant tout le monde. Mais la nuit, je pleurais en me demandant pourquoi je n'arrivais pas à être heureuse comme les autres. Le jour où j'ai osé le dire à haute voix, tout a commencé à changer.&nbsp;»</div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CHECK-LIST INTERACTIVE ===== -->
+  <section class="checklist-preview" id="checklist">
+    <div class="container">
+      <div class="checklist-container">
+        <div class="section-label key">Outil pratique</div>
+        <h2 class="section-title">Ma check-list postnatale</h2>
+        <div class="section-subtitle">prendre soin de toi aussi</div>
+
+        <p class="checklist-intro">
+          Cette liste n'est pas une liste de choses à faire en plus. C'est un outil
+          pour t'aider à vérifier que toi aussi, tu es pris·e en compte dans cette nouvelle vie.
+        </p>
+
+        <div class="checklist-group">
+          <div class="checklist-group-title">Mon bien-être émotionnel</div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">J'ai identifié une personne de confiance à qui parler quand c'est dur</span>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">Je connais la différence entre le baby blues et la dépression postpartum</span>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">J'ai les coordonnées d'un·e professionnel·le en santé mentale périnatale</span>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">Je me donne le droit de ne pas « tout aimer » du postnatal</span>
+          </div>
+        </div>
+
+        <div class="checklist-group">
+          <div class="checklist-group-title">Mon corps, ma récupération</div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">J'ai un suivi postnatal prévu (médecin, sage-femme)</span>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">J'ai pris rendez-vous en rééducation périnéale</span>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">Je sais que la récupération physique prend du temps — et c'est normal</span>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">J'ai accès à du soutien en allaitement si j'en ai besoin</span>
+          </div>
+        </div>
+
+        <div class="checklist-group">
+          <div class="checklist-group-title">Mon quotidien</div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">J'ai un plan pour les repas des premières semaines</span>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">J'ai identifié au moins une activité ou un groupe de parents près de chez moi</span>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">J'ai prévu des moments de repos (même courts) dans ma routine</span>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">Je sais à quel organisme communautaire je peux faire appel dans mon quartier</span>
+          </div>
+        </div>
+
+        <div class="checklist-group">
+          <div class="checklist-group-title">Mon identité, mon chemin</div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">Je sais que devenir parent transforme mon identité — et c'est normal</span>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">Je me donne la permission de pleurer, de douter, de me sentir dépassé·e</span>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">Je comprends que le lien avec bébé se construit — il n'est pas toujours instantané</span>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">Je garde au moins une chose qui est juste pour moi (même petite)</span>
+          </div>
+        </div>
+
+        <div class="checklist-cta">
+          <p>Tu veux garder cette check-list&nbsp;? Télécharge la version PDF imprimable.</p>
+          <a href="#" class="btn btn-terra">Télécharger la check-list (PDF)</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ARTICLES PREVIEW ===== -->
+  <section class="articles">
+    <div class="container">
+      <div class="section-label key">Aller plus loin</div>
+      <h2 class="section-title">Articles</h2>
+      <div class="section-subtitle">pour traverser, pas pour performer</div>
+
+      <div class="articles-grid">
+        <a href="#" class="article-card">
+          <div class="article-thumb">🦋</div>
+          <div class="article-body">
+            <div class="article-tag">Matrescence</div>
+            <h3 class="article-title">La matrescence : devenir mère, c'est aussi perdre qui on était</h3>
+            <p class="article-excerpt">Pourquoi cette transformation identitaire est normale — et pourquoi on n'en parle pas assez.</p>
+            <span class="article-read">Lire l'article →</span>
+          </div>
+        </a>
+        <a href="#" class="article-card">
+          <div class="article-thumb">🌧️</div>
+          <div class="article-body">
+            <div class="article-tag">Santé mentale</div>
+            <h3 class="article-title">Baby blues ou dépression postpartum : comment faire la différence</h3>
+            <p class="article-excerpt">Les signes, la durée, les ressources. Ce que chaque parent devrait savoir.</p>
+            <span class="article-read">Lire l'article →</span>
+          </div>
+        </a>
+        <a href="#" class="article-card">
+          <div class="article-thumb">😴</div>
+          <div class="article-body">
+            <div class="article-tag">Quotidien</div>
+            <h3 class="article-title">Les premières semaines : ce que personne ne te dit</h3>
+            <p class="article-excerpt">Le vrai visage du postnatal — et pourquoi c'est ok de ne pas trouver ça magique.</p>
+            <span class="article-read">Lire l'article →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Tu n'as pas à traverser ça seul·e</h2>
+      <div class="script">un jour à la fois.</div>
+      <p>
+        Rejoins la communauté Parent un jour — un espace sans jugement,
+        avec des ressources et du soutien pour chaque étape du postnatal.
+      </p>
+      <div class="cta-buttons">
+        <a href="https://www.instagram.com/parentunjour" class="btn btn-primary" target="_blank" rel="noopener">Rejoindre le village</a>
+        <a href={base} class="btn btn-outline">Retour à l'accueil</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<script is:inline>
+  document.querySelectorAll('.checklist-item').forEach((item) => {
+    item.addEventListener('click', () => {
+      item.querySelector('.checklist-box').classList.toggle('checked');
+      item.classList.toggle('checked-item');
+    });
+  });
+</script>
