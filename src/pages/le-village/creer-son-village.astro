@@ -1,0 +1,602 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+<Layout
+  title="Créer son village — Parent un jour"
+  description="Parce que personne ne devrait traverser la parentalité seul·e. Identifie ton cercle de soutien, les professionnel·les, les ressources — avant la naissance."
+>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="label">Parent un jour</div>
+      <h1>Créer son village</h1>
+      <div class="script-line">avant d'accueillir bébé</div>
+      <p class="tagline">
+        Parce que personne ne devrait traverser la parentalité seul·e.
+        Ton village, c'est toutes les personnes et les ressources qui seront là pour toi —
+        avant, pendant, et après.
+      </p>
+      <div class="buttons">
+        <a href="#village-def" class="btn btn-primary">Découvrir</a>
+        <a href="#checklist" class="btn btn-outline">Ma check-list</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONSTAT SCIENTIFIQUE ===== -->
+  <section class="constat">
+    <div class="container">
+      <div class="section-label key">Ce que disent les chiffres</div>
+      <h2 class="section-title">Pourquoi le village est essentiel</h2>
+      <div class="section-subtitle">les données parlent d'elles-mêmes</div>
+
+      <p class="constat-intro">
+        Le Plan d'action en périnatalité et petite enfance 2023-2028 du gouvernement du Québec le confirme :
+        les familles arrivent trop souvent à la naissance sans réseau de soutien en place.
+        Le système de santé fait ce qu'il peut, mais il ne peut pas tout couvrir.
+      </p>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">25%</div>
+          <div class="stat-label">des femmes enceintes au Québec n'ont pas de suivi obstétrical au premier trimestre</div>
+          <div class="stat-source"><a href="https://publications.msss.gouv.qc.ca/msss/fichiers/2023/23-918-37W.pdf" target="_blank" rel="noopener">PAPPE 2023-2028</a>, données RAMQ</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">2,2 j</div>
+          <div class="stat-label">durée moyenne de séjour à l'hôpital après un accouchement — en baisse constante</div>
+          <div class="stat-source"><a href="https://publications.msss.gouv.qc.ca/msss/fichiers/2023/23-918-37W.pdf" target="_blank" rel="noopener">PAPPE 2023-2028</a>, données MSSS</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">1 sur 3</div>
+          <div class="stat-label">parents ayant un enfant de 4 ans ou moins rapportent avoir vécu des symptômes dépressifs ou de l'anxiété affectant leurs activités quotidiennes en période périnatale</div>
+          <div class="stat-source"><a href="https://www.rcrpq.com/2026/03/02/nouvelles-donnees-sur-la-sante-mentale-perinatale/" target="_blank" rel="noopener">Réseau des CRP</a>, sondage TACT 2026</div>
+        </div>
+      </div>
+
+      <p class="constat-outro">
+        Ce qui veut dire que beaucoup de parents rentrent chez eux avec un nouveau-né, sans filet de sécurité clair.
+        <strong>Ton village, c'est ce filet.</strong> Et il se prépare avant la naissance.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== QU'EST-CE QU'UN VILLAGE ===== -->
+  <section class="village-def" id="village-def">
+    <div class="container">
+      <div class="section-label key">Le coeur du projet</div>
+      <h2 class="section-title">C'est quoi, un village ?</h2>
+      <div class="section-subtitle">toutes les personnes qui seront là pour toi</div>
+
+      <p class="village-intro">
+        Un village, ce n'est pas un idéal inaccessible. Ce n'est pas avoir une famille parfaite
+        ou dix ami·es disponibles 24/7. C'est un réseau concret de personnes et de ressources,
+        chacune avec un rôle différent, que tu identifies et actives <em>avant</em> d'en avoir besoin.
+      </p>
+
+      <div class="village-categories">
+        <div class="village-cat">
+          <span class="village-cat-icon">🤝</span>
+          <h3 class="village-cat-title">Le cercle proche</h3>
+          <div class="village-cat-list">
+            <span>Ton ou ta partenaire — en équipe, pas en solo</span>
+            <span>Ta mère, ta belle-mère, un·e ami·e proche</span>
+            <span>La personne que tu peux appeler à 3h du matin</span>
+            <span>Celle qui viendra sans que tu demandes</span>
+          </div>
+        </div>
+
+        <div class="village-cat">
+          <span class="village-cat-icon">🏥</span>
+          <h3 class="village-cat-title">Les professionnel·les de santé</h3>
+          <div class="village-cat-list">
+            <span>Médecin de famille ou sage-femme</span>
+            <span>Consultante en lactation (IBCLC)</span>
+            <span>Psychologue ou travailleur·se social·e</span>
+            <span>Pharmacien·ne de quartier</span>
+          </div>
+        </div>
+
+        <div class="village-cat">
+          <span class="village-cat-icon">🌱</span>
+          <h3 class="village-cat-title">Les ressources communautaires</h3>
+          <div class="village-cat-list">
+            <span>CLSC de ton quartier</span>
+            <span>Organisme communautaire en périnatalité</span>
+            <span>Groupe de parents (en personne ou en ligne)</span>
+            <span>Maison de la famille, halte-garderie</span>
+          </div>
+        </div>
+
+        <div class="village-cat">
+          <span class="village-cat-icon">✨</span>
+          <h3 class="village-cat-title">Le soutien du quotidien</h3>
+          <div class="village-cat-list">
+            <span>Ta voisine qui peut garder 30 minutes</span>
+            <span>Le service de livraison de repas</span>
+            <span>L'ami·e qui t'envoie un texto juste pour prendre des nouvelles</span>
+            <span>L'application qui t'aide à t'organiser</span>
+          </div>
+        </div>
+
+        <div class="village-cat">
+          <span class="village-cat-icon">📚</span>
+          <h3 class="village-cat-title">Les sources d'information fiables</h3>
+          <div class="village-cat-list">
+            <span>Guide « Mieux vivre avec notre enfant » (INSPQ)</span>
+            <span>Portail d'information périnatale (INSPQ)</span>
+            <span>Comptes et podcasts sourcés que tu fais confiance</span>
+            <span>Livres recommandés par des professionnel·les</span>
+          </div>
+        </div>
+
+        <div class="village-cat">
+          <span class="village-cat-icon">🧡</span>
+          <h3 class="village-cat-title">Les accompagnant·es</h3>
+          <div class="village-cat-list">
+            <span>Accompagnante à la naissance (doula)</span>
+            <span>Naturopathe en périnatalité</span>
+            <span>Relevailles à domicile</span>
+            <span>Éducatrice en périnatalité</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== POURQUOI C'EST IMPORTANT ===== -->
+  <section class="pourquoi">
+    <div class="container">
+      <div class="section-label key">Aller plus loin</div>
+      <h2 class="section-title">Pourquoi préparer son village</h2>
+      <div class="section-subtitle">avant la naissance</div>
+
+      <div class="pourquoi-grid">
+        <div class="pourquoi-text">
+          <p>Quand bébé arrive, tout change en un instant. Le sommeil disparaît, les repères bougent, les émotions sont amplifiées. Ce n'est pas le moment de chercher qui peut t'aider — c'est le moment d'<strong>activer</strong> un réseau que tu as déjà identifié.</p>
+          <p>Préparer son village, c'est se poser les bonnes questions en amont : <strong>Qui sera disponible les premières semaines ?</strong> Qui peut m'apporter un repas ? Qui peut garder le bébé pendant que je dors une heure ? Qui est-ce que j'appelle si l'allaitement ne fonctionne pas ?</p>
+          <p>Ce n'est pas un signe de faiblesse. C'est de la <strong>prévention</strong>. Le Plan d'action du Québec en périnatalité le dit clairement : les visites à domicile postnatales sont associées à une meilleure santé mentale parentale, de meilleurs taux d'allaitement, et une diminution des coûts de santé.</p>
+          <p>Ton village n'a pas besoin d'être grand. Il a besoin d'être <strong>réel</strong>.</p>
+        </div>
+        <aside class="pourquoi-aside">
+          <h3>Demander de l'aide, c'est un acte de courage</h3>
+          <p>On nous a appris qu'être un bon parent, c'est tout gérer seul·e. C'est faux. Les sociétés où la parentalité se vit en communauté sont celles où les parents et les enfants se portent le mieux.</p>
+          <p>Demander de l'aide, ce n'est pas avouer qu'on n'y arrive pas. C'est <strong>choisir de bien s'entourer</strong> pour pouvoir donner le meilleur de soi-même à son enfant.</p>
+          <div class="temoignage">«&nbsp;La chose la plus difficile n'a pas été l'accouchement. C'est les deux semaines qui ont suivi, quand je me suis retrouvée seule avec mon bébé et que je ne savais pas à qui demander de l'aide.&nbsp;»</div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CHECK-LIST INTERACTIVE ===== -->
+  <section class="checklist-preview" id="checklist">
+    <div class="container">
+      <div class="checklist-container">
+        <div class="section-label key">Outil pratique</div>
+        <h2 class="section-title">Ma check-list du village</h2>
+        <div class="section-subtitle">à remplir avant le 3e trimestre</div>
+
+        <p class="checklist-intro">
+          Prends quelques minutes pour parcourir cette liste.
+          Coche ce qui est déjà en place, et identifie ce qui te manque.
+          C'est un premier pas concret pour construire ton village.
+        </p>
+
+        <div class="checklist-group">
+          <div class="checklist-group-title">Mon cercle de soutien</div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">J'ai identifié 1-2 personnes que je peux appeler en cas d'urgence</span>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">Mon/ma partenaire et moi avons parlé de la répartition des tâches après la naissance</span>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">J'ai au moins une personne qui peut venir m'aider les premières semaines</span>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">J'ai osé dire à mon entourage ce dont j'aurai besoin (et ce dont je n'aurai pas besoin)</span>
+          </div>
+        </div>
+
+        <div class="checklist-group">
+          <div class="checklist-group-title">Mon suivi de santé</div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">J'ai un·e professionnel·le de santé pour mon suivi de grossesse</span>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">Je sais où accoucher et j'ai visité le lieu</span>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">J'ai le numéro de mon CLSC et je connais les services offerts</span>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">J'ai identifié un·e pédiatre ou médecin pour bébé (ou je suis sur une liste d'attente)</span>
+          </div>
+        </div>
+
+        <div class="checklist-group">
+          <div class="checklist-group-title">Mes ressources</div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">Je connais au moins un organisme communautaire en périnatalité dans mon quartier</span>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">J'ai le guide « Mieux vivre avec notre enfant » (gratuit, distribué par l'INSPQ)</span>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">J'ai exploré les groupes de parents de mon quartier (en personne ou en ligne)</span>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">J'ai une ou deux sources d'information fiables que je consulte régulièrement</span>
+          </div>
+        </div>
+
+        <div class="checklist-group">
+          <div class="checklist-group-title">Mon bien-être</div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">J'ai pensé à comment je vais prendre soin de moi après la naissance</span>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">J'ai identifié une ressource en cas de difficulté émotionnelle (psychologue, ligne d'écoute)</span>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">J'ai prévu des repas faciles ou un système de livraison pour les premières semaines</span>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-box"></div>
+            <span class="checklist-text">Je me suis donné·e la permission de ne pas tout savoir et de demander de l'aide</span>
+          </div>
+        </div>
+
+        <div class="checklist-cta">
+          <p>Tu veux garder cette check-list ? Télécharge la version PDF imprimable.</p>
+          <a href="#" class="btn btn-terra">Télécharger la check-list (PDF)</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ARTICLES PREVIEW ===== -->
+  <section class="articles">
+    <div class="container">
+      <div class="section-label key">Aller plus loin</div>
+      <h2 class="section-title">Articles</h2>
+      <div class="section-subtitle">pour construire ton village</div>
+
+      <div class="articles-grid">
+        <a href="#" class="article-card">
+          <div class="article-thumb">🤝</div>
+          <div class="article-body">
+            <div class="article-tag">Le village</div>
+            <h3 class="article-title">5 personnes à avoir dans ton village avant la naissance</h3>
+            <p class="article-excerpt">Ton village n'a pas besoin d'être immense. Mais ces 5 rôles-clés font toute la différence quand bébé arrive.</p>
+            <span class="article-read">Lire l'article →</span>
+          </div>
+        </a>
+        <a href="#" class="article-card">
+          <div class="article-thumb">💬</div>
+          <div class="article-body">
+            <div class="article-tag">Demander de l'aide</div>
+            <h3 class="article-title">Comment demander de l'aide (sans culpabiliser)</h3>
+            <p class="article-excerpt">On nous a appris à tout gérer seul·e. Mais la parentalité n'est pas faite pour ça. Petit guide pour oser dire « j'ai besoin ».</p>
+            <span class="article-read">Lire l'article →</span>
+          </div>
+        </a>
+        <a href="#" class="article-card">
+          <div class="article-thumb">🛒</div>
+          <div class="article-body">
+            <div class="article-tag">Le quotidien</div>
+            <h3 class="article-title">Le village, c'est aussi ton pharmacien et ton appli de livraison</h3>
+            <p class="article-excerpt">Ton village ne se limite pas aux gens proches. C'est tout un écosystème qui te facilite la vie au quotidien.</p>
+            <span class="article-read">Lire l'article →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ton village commence ici</h2>
+      <div class="script">et on le construit ensemble.</div>
+      <p>
+        Rejoins la communauté Parent un jour sur Instagram pour des conseils concrets,
+        des ressources fiables, et un espace bienveillant pour échanger entre parents.
+      </p>
+      <div class="cta-buttons">
+        <a href="https://www.instagram.com/parentunjour" class="btn btn-primary" target="_blank" rel="noopener">Rejoindre le village</a>
+        <a href={base} class="btn btn-outline">Retour à l'accueil</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<script is:inline>
+  document.querySelectorAll('.checklist-item').forEach((item) => {
+    item.addEventListener('click', () => {
+      item.querySelector('.checklist-box').classList.toggle('checked');
+      item.classList.toggle('checked-item');
+    });
+  });
+</script>
+
+<style is:global>
+  /* ===== CONSTAT ===== */
+  .constat { background: var(--offwhite); }
+  .constat-intro {
+    max-width: 720px; margin: 0 auto 60px;
+    text-align: center; font-size: 17px;
+    line-height: 1.7;
+  }
+  .constat-outro {
+    text-align: center; font-size: 16px;
+    max-width: 680px; margin: 20px auto 0;
+    line-height: 1.7;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px; margin-bottom: 40px;
+  }
+  .stat-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 36px 24px;
+    text-align: center;
+    border: 1px solid var(--sage-light);
+    transition: transform 0.3s;
+  }
+  .stat-card:hover { transform: translateY(-4px); }
+  .stat-number {
+    font-family: 'Georgia', serif;
+    font-size: 42px; color: var(--terra);
+    font-weight: 700; margin-bottom: 8px;
+  }
+  .stat-label {
+    font-size: 14px; line-height: 1.5;
+    color: var(--slate);
+  }
+  .stat-source {
+    font-size: 11px; color: var(--sage);
+    margin-top: 8px; font-style: italic;
+  }
+  .stat-source a {
+    color: var(--sage); text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.3s;
+  }
+  .stat-source a:hover { color: var(--terra); }
+  @media (max-width: 768px) {
+    .stats-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ===== VILLAGE DEF ===== */
+  .village-def { background: var(--sage-light); }
+  .village-def .container { max-width: 900px; }
+  .village-intro {
+    text-align: center; font-size: 17px;
+    max-width: 720px; margin: 0 auto 60px;
+    line-height: 1.7;
+  }
+  .village-categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .village-cat {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 32px 28px;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+  }
+  .village-cat:hover {
+    border-color: var(--sage);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(92, 106, 115, 0.06);
+  }
+  .village-cat-icon {
+    font-size: 32px; margin-bottom: 12px; display: block;
+  }
+  .village-cat-title {
+    font-family: 'Georgia', serif;
+    font-size: 20px; color: var(--slate);
+    font-weight: 700; margin-bottom: 10px;
+  }
+  .village-cat-list {
+    font-size: 15px; line-height: 1.7;
+    color: var(--slate);
+  }
+  .village-cat-list span {
+    display: block;
+    padding: 3px 0;
+  }
+  .village-cat-list span::before {
+    content: ""; display: inline-block;
+    width: 6px; height: 6px;
+    background: var(--terra-soft);
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  @media (max-width: 768px) {
+    .village-categories { grid-template-columns: 1fr; }
+  }
+
+  /* ===== POURQUOI ===== */
+  .pourquoi { background: var(--offwhite); }
+  .pourquoi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px; align-items: start;
+  }
+  .pourquoi-text { font-size: 16px; line-height: 1.75; }
+  .pourquoi-text p { margin-bottom: 18px; }
+  .pourquoi-text strong { color: var(--slate); font-weight: 700; }
+  .pourquoi-aside {
+    background: var(--cream);
+    border-radius: 16px;
+    padding: 36px 32px;
+    border-left: 4px solid var(--terra);
+  }
+  .pourquoi-aside h3 {
+    font-family: 'Georgia', serif;
+    font-size: 20px; color: var(--terra);
+    margin-bottom: 16px;
+  }
+  .pourquoi-aside p {
+    font-size: 15px; line-height: 1.7;
+    margin-bottom: 12px;
+  }
+  .pourquoi-aside .temoignage {
+    font-style: italic; color: var(--sage);
+    font-size: 14px; margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--sage-light);
+  }
+  @media (max-width: 768px) {
+    .pourquoi-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ===== CHECKLIST ===== */
+  .checklist-preview { background: var(--cream); }
+  .checklist-container { max-width: 700px; margin: 0 auto; }
+  .checklist-intro {
+    text-align: center; font-size: 17px;
+    margin-bottom: 40px; line-height: 1.7;
+  }
+  .checklist-group { margin-bottom: 32px; }
+  .checklist-group-title {
+    font-family: 'Georgia', serif;
+    font-size: 18px; color: var(--sage);
+    font-weight: 700; margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--sage-light);
+  }
+  .checklist-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 10px 0;
+    font-size: 15px; line-height: 1.6;
+    cursor: pointer;
+  }
+  .checklist-box {
+    width: 20px; height: 20px;
+    border: 2px solid var(--sage);
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    transition: all 0.2s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .checklist-box.checked {
+    background: var(--sage);
+    border-color: var(--sage);
+  }
+  .checklist-box.checked::after {
+    content: "✓"; color: white; font-size: 14px; font-weight: 700;
+  }
+  .checklist-item.checked-item .checklist-text {
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+  .checklist-cta {
+    text-align: center; margin-top: 40px;
+  }
+  .checklist-cta p {
+    font-size: 14px; color: var(--sage);
+    margin-bottom: 16px;
+  }
+
+  /* ===== ARTICLES ===== */
+  .articles { background: var(--offwhite); }
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .article-card {
+    background: var(--white);
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--sage-light);
+    transition: all 0.3s;
+    text-decoration: none; color: var(--slate);
+    display: block;
+  }
+  .article-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(92, 106, 115, 0.08);
+    border-color: var(--terra);
+  }
+  .article-thumb {
+    height: 160px;
+    background: linear-gradient(135deg, var(--sage-light), var(--terra-light));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 48px;
+  }
+  .article-body { padding: 24px; }
+  .article-tag {
+    font-size: 10px; letter-spacing: 2px;
+    color: var(--terra); text-transform: uppercase;
+    font-weight: 700; margin-bottom: 8px;
+  }
+  .article-title {
+    font-family: 'Georgia', serif;
+    font-size: 18px; color: var(--slate);
+    font-weight: 700; line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  .article-excerpt {
+    font-size: 14px; line-height: 1.6;
+    color: var(--slate); opacity: 0.8;
+  }
+  .article-read {
+    display: inline-block; margin-top: 14px;
+    font-size: 13px; letter-spacing: 1px;
+    color: var(--terra); text-transform: uppercase;
+    font-weight: 700;
+  }
+  @media (max-width: 768px) {
+    .articles-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ===== CTA SECTION ===== */
+  .cta-section {
+    background: linear-gradient(160deg, var(--sage-light) 0%, var(--cream) 100%);
+    text-align: center;
+  }
+  .cta-section h2 {
+    font-family: 'Georgia', serif;
+    font-size: clamp(28px, 4vw, 40px);
+    color: var(--slate); font-weight: 400;
+    margin-bottom: 16px;
+  }
+  .cta-section .script {
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 28px; color: var(--terra);
+    margin-bottom: 24px;
+  }
+  .cta-section p {
+    font-size: 17px; max-width: 600px;
+    margin: 0 auto 36px; line-height: 1.7;
+  }
+  .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+</style>

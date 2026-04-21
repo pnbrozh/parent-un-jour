@@ -146,6 +146,8 @@ section { padding: 100px 40px; }
   border: 1.5px solid var(--slate);
 }
 .btn-outline:hover { background: var(--slate); color: var(--white); }
+.btn-terra { background: var(--terra); color: var(--white); }
+.btn-terra:hover { background: var(--slate); transform: translateY(-2px); }
 
 /* ===== FOOTER ===== */
 footer.site-footer {
