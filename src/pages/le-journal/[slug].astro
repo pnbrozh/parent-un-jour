@@ -1,0 +1,63 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const base = import.meta.env.BASE_URL;
+
+const publishDateFormatted = post.data.publishDate.toLocaleDateString('fr-CA', {
+  year: 'numeric', month: 'long', day: 'numeric',
+});
+
+const axisHref: Record<string, string> = {
+  'creer-son-village': `${base}le-village/creer-son-village/`,
+  'couple-coparent': `${base}le-village/couple-coparent/`,
+  'postnatal': `${base}le-village/postnatal/`,
+  'general': `${base}le-journal/`,
+};
+const ctaHref = axisHref[post.data.axis];
+---
+<Layout
+  title={post.data.title}
+  description={post.data.description}
+  ogType="article"
+  image={post.data.image}
+  publishDate={post.data.publishDate}
+  updatedDate={post.data.updatedDate}
+  author={post.data.author}
+  tags={post.data.tags}
+>
+  <header class="article-hero">
+    <div class="article-hero-inner">
+      <p class="article-meta">
+        <a href={`${base}le-journal/`}>Le journal</a>
+        <span class="dot">·</span>
+        <a href={ctaHref}>{post.data.axisLabel}</a>
+      </p>
+      <h1>{post.data.title}</h1>
+      <p class="subtitle">{post.data.description}</p>
+      <p class="publish">Publié le {publishDateFormatted}</p>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <Content />
+  </article>
+
+  <section class="article-cta">
+    <p class="label">Aller plus loin</p>
+    <h2>Prêt·e à aller plus loin&nbsp;?</h2>
+    <p class="cursive">un pas à la fois</p>
+    <a href={ctaHref} class="btn btn-primary">Découvrir «&nbsp;{post.data.axisLabel}&nbsp;»</a>
+  </section>
+</Layout>

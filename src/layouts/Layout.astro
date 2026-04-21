@@ -6,19 +6,132 @@ import Footer from '../components/Footer.astro';
 interface Props {
   title: string;
   description?: string;
+  /** Type Open Graph — 'website' par défaut, 'article' pour les posts du journal */
+  ogType?: 'website' | 'article';
+  /** Image de partage social (chemin absolu depuis base, ex: /assets/og-image.png) */
+  image?: string;
+  /** Pour les articles uniquement */
+  publishDate?: Date;
+  updatedDate?: Date;
+  author?: string;
+  tags?: string[];
 }
 
-const { title, description = "Parent un jour — un village pour accompagner la parentalité, avant, pendant et après bébé." } = Astro.props;
+const {
+  title,
+  description = "Parent un jour — un village pour accompagner la parentalité, avant, pendant et après bébé.",
+  ogType = 'website',
+  image,
+  publishDate,
+  updatedDate,
+  author = 'Pascaline Nourry',
+  tags = [],
+} = Astro.props;
+
 const base = import.meta.env.BASE_URL;
+// En preview (sous-chemin), on empêche Google d'indexer. En production (base='/'), on laisse.
+const isProduction = base === '/';
+
+// URL canonique : on calcule l'URL de production (parentunjour.ca) peu importe où on est déployé.
+// Quand on passera en prod, Astro.url.pathname n'aura plus le préfixe /parent-un-jour, donc ça marchera sans changement.
+const pathnameWithoutBase = Astro.url.pathname.replace(/^\/parent-un-jour/, '');
+const canonicalURL = new URL(pathnameWithoutBase, 'https://parentunjour.ca').toString();
+
+// Image OG par défaut : le logo
+const socialImage = image ?? `${base}assets/logo.png`;
+const absoluteImage = new URL(socialImage, 'https://parentunjour.ca').toString();
+
+const siteName = 'Parent un jour';
 ---
 <!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
+
+    <!-- Primary meta -->
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    {!isProduction && <meta name="robots" content="noindex, nofollow" />}
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href={`${base}assets/logo.png`} />
+
+    <!-- Open Graph (Facebook, Instagram, LinkedIn) -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={absoluteImage} />
+    <meta property="og:locale" content="fr_CA" />
+    {ogType === 'article' && publishDate && (
+      <meta property="article:published_time" content={publishDate.toISOString()} />
+    )}
+    {ogType === 'article' && updatedDate && (
+      <meta property="article:modified_time" content={updatedDate.toISOString()} />
+    )}
+    {ogType === 'article' && author && (
+      <meta property="article:author" content={author} />
+    )}
+    {ogType === 'article' && tags.map((tag) => (
+      <meta property="article:tag" content={tag} />
+    ))}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={absoluteImage} />
+
+    <!-- JSON-LD Structured Data -->
+    {ogType === 'article' && publishDate ? (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: title,
+        description,
+        image: absoluteImage,
+        datePublished: publishDate.toISOString(),
+        dateModified: (updatedDate ?? publishDate).toISOString(),
+        author: {
+          '@type': 'Person',
+          name: author,
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: siteName,
+          logo: {
+            '@type': 'ImageObject',
+            url: new URL('/assets/logo.png', 'https://parentunjour.ca').toString(),
+          },
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': canonicalURL,
+        },
+        keywords: tags.join(', '),
+      })} />
+    ) : (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: siteName,
+        url: 'https://parentunjour.ca',
+        description,
+        inLanguage: 'fr-CA',
+        publisher: {
+          '@type': 'Person',
+          name: 'Pascaline Nourry',
+        },
+      })} />
+    )}
+
+    <!-- RSS (pour les lecteurs de flux) -->
+    <link rel="alternate" type="application/rss+xml" title={`${siteName} — Le journal`} href={`${base}rss.xml`} />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />

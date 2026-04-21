@@ -1,0 +1,146 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const base = import.meta.env.BASE_URL;
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+
+const featured = posts.find((p) => p.data.featured);
+const others = posts.filter((p) => p !== featured);
+
+const axes = [
+  { key: 'creer-son-village', label: 'Créer son village' },
+  { key: 'couple-coparent',   label: 'Le couple' },
+  { key: 'postnatal',         label: 'Le postnatal' },
+] as const;
+
+// Regroupement par axe pour l'affichage
+const byAxis = Object.fromEntries(
+  axes.map(({ key }) => [key, others.filter((p) => p.data.axis === key)])
+) as Record<string, typeof others>;
+
+const formatDate = (d: Date) =>
+  d.toLocaleDateString('fr-CA', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+<Layout
+  title="Le journal — Parent un jour"
+  description="Le journal de Parent un jour — articles sourcés scientifiquement sur la préparation au village, le couple après bébé, le postnatal et la santé mentale périnatale."
+>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="label">Parent un jour</div>
+      <h1>Le journal du village</h1>
+      <div class="script-line">ici, on parle pour vrai</div>
+      <p class="tagline">
+        Un espace où on aborde les vraies questions de la parentalité — sans filtre,
+        sans jugement, avec des sources. Chaque article est pensé pour t'accompagner
+        là où tu en es.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED ARTICLE ===== -->
+  {featured && (
+    <section class="journal-featured">
+      <div class="container">
+        <div class="section-label key">À la une</div>
+        <a href={`${base}le-journal/${featured.id}/`} class="featured-card">
+          <div class="featured-thumb" data-axis={featured.data.axis}>
+            <span class="featured-emoji">{featured.data.thumbnailEmoji}</span>
+          </div>
+          <div class="featured-content">
+            <div class={`tag-cat ${featured.data.axis}`}>{featured.data.axisLabel}</div>
+            <h2>{featured.data.title}</h2>
+            <p>{featured.data.description}</p>
+            <span class="article-read">Lire l'article →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  )}
+
+  <!-- ===== FILTRES ===== -->
+  <section class="journal-filters">
+    <div class="container">
+      <div class="filter-bar" role="tablist" aria-label="Filtrer les articles par axe">
+        <button type="button" class="filter-tab active" data-filter="all" role="tab" aria-selected="true">Tous</button>
+        {axes.map(({ key, label }) => (
+          <button type="button" class="filter-tab" data-filter={key} role="tab" aria-selected="false">{label}</button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ARTICLES PAR AXE ===== -->
+  <section class="journal-list">
+    <div class="container">
+      {axes.map(({ key, label }) => {
+        const axisPosts = byAxis[key];
+        if (axisPosts.length === 0) return null;
+        return (
+          <div class="journal-group" data-axis-group={key}>
+            <h2 class="journal-axis-title">{label}</h2>
+            <div class="journal-grid">
+              {axisPosts.map((post) => (
+                <a href={`${base}le-journal/${post.id}/`} class="journal-card" data-axis={post.data.axis}>
+                  <div class="journal-thumb" data-axis={post.data.axis}>
+                    <span class="journal-emoji">{post.data.thumbnailEmoji}</span>
+                  </div>
+                  <div class="journal-card-body">
+                    <div class={`tag-cat ${post.data.axis}`}>{post.data.axisLabel}</div>
+                    <h3>{post.data.title}</h3>
+                    <p>{post.data.description}</p>
+                    <div class="journal-meta-line">
+                      <time datetime={post.data.publishDate.toISOString()}>{formatDate(post.data.publishDate)}</time>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        );
+      })}
+
+      {posts.length === 0 && (
+        <p class="journal-empty">Aucun article publié pour le moment — les premiers arrivent bientôt.</p>
+      )}
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ne manque rien du journal</h2>
+      <div class="script">un article à la fois.</div>
+      <p>
+        Suis Parent un jour sur Instagram pour être averti·e des nouveaux articles —
+        et rejoins une communauté de parents qui osent parler vrai.
+      </p>
+      <div class="cta-buttons">
+        <a href="https://www.instagram.com/parentunjour" class="btn btn-primary" target="_blank" rel="noopener">Me suivre sur Instagram</a>
+        <a href={`${base}rss.xml`} class="btn btn-outline">Flux RSS</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<script is:inline>
+  document.querySelectorAll('.filter-tab').forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const filter = tab.dataset.filter;
+      document.querySelectorAll('.filter-tab').forEach((t) => {
+        t.classList.toggle('active', t === tab);
+        t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
+      });
+      document.querySelectorAll('[data-axis-group]').forEach((group) => {
+        const match = filter === 'all' || group.dataset.axisGroup === filter;
+        group.style.display = match ? '' : 'none';
+      });
+    });
+  });
+</script>
