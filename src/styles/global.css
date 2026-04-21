@@ -149,6 +149,57 @@ section { padding: 100px 40px; }
 .btn-terra { background: var(--terra); color: var(--white); }
 .btn-terra:hover { background: var(--slate); transform: translateY(-2px); }
 
+/* ===== HERO (shared across pages) ===== */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(160deg, var(--sage-light) 0%, var(--cream) 60%, var(--terra-light) 100%);
+  display: flex; align-items: center; justify-content: center;
+  padding: 140px 40px 100px;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ""; position: absolute; top: -100px; right: -100px;
+  width: 400px; height: 400px;
+  background: var(--terra); opacity: 0.15;
+  border-radius: 50%; filter: blur(40px);
+}
+.hero::after {
+  content: ""; position: absolute; bottom: -150px; left: -100px;
+  width: 500px; height: 500px;
+  background: var(--sage); opacity: 0.2;
+  border-radius: 50%; filter: blur(50px);
+}
+.hero-inner {
+  max-width: 900px; text-align: center;
+  position: relative; z-index: 1;
+}
+.hero .label {
+  font-size: 14px; letter-spacing: 3.5px;
+  color: var(--sage); font-weight: 700;
+  margin-bottom: 32px; text-transform: uppercase;
+}
+.hero h1 {
+  font-family: 'Georgia', serif;
+  font-size: clamp(36px, 6vw, 68px);
+  line-height: 1.15;
+  color: var(--slate);
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.hero .script-line {
+  font-family: 'La Belle Aurore', cursive;
+  font-size: clamp(28px, 4vw, 42px);
+  color: var(--terra);
+  margin-bottom: 36px;
+}
+.hero p.tagline {
+  font-size: 18px; max-width: 640px; margin: 0 auto 40px;
+  color: var(--slate); opacity: 0.85;
+}
+.hero .buttons {
+  display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+}
+
 /* ===== FOOTER ===== */
 footer.site-footer {
   background: var(--offwhite);
