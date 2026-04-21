@@ -486,11 +486,16 @@ const base = import.meta.env.BASE_URL;
     color: var(--sage);
     font-size: 15px;
   }
-  @media (max-width: 768px) { .ressources-grid { grid-template-columns: 1fr; } }
   .ressources-grid--compact {
     grid-template-columns: repeat(2, 1fr);
     max-width: 960px;
     margin: 0 auto;
+  }
+  @media (max-width: 768px) {
+    .ressources-grid,
+    .ressources-grid--compact {
+      grid-template-columns: 1fr;
+    }
   }
   .ressources-more {
     color: var(--terra);
