@@ -23,24 +23,48 @@ const formatMonthYear = (d: Date) =>
   <!-- ===== HEADER JOURNAL ===== -->
   <header class="journal-header">
 
-    <!-- Motif botanique inspiré du logo -->
-    <svg class="botanical" viewBox="0 0 120 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path d="M 60 240 C 58 210, 50 185, 48 160 C 46 135, 50 110, 55 85 C 60 60, 65 40, 62 15"
-            stroke="#83967D" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.7"/>
-      <path d="M 55 240 C 53 215, 42 190, 40 168 C 38 145, 42 125, 48 100 C 54 75, 58 50, 55 25"
-            stroke="#4C5861" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.35"/>
-      <path d="M 48 165 C 30 160, 16 150, 12 140 C 22 137, 36 145, 46 158" fill="#83967D" opacity="0.3"/>
-      <path d="M 50 120 C 32 116, 18 106, 15 96 C 24 93, 38 102, 48 114" fill="#83967D" opacity="0.25"/>
-      <path d="M 55 78 C 40 73, 28 63, 26 54 C 34 52, 46 60, 54 72" fill="#83967D" opacity="0.2"/>
-      <path d="M 50 142 C 68 138, 82 128, 86 118 C 76 115, 62 124, 52 136" fill="#83967D" opacity="0.25"/>
-      <path d="M 53 98 C 70 93, 84 84, 87 74 C 78 72, 64 80, 54 92" fill="#83967D" opacity="0.2"/>
-      <circle cx="48" cy="160" r="5.5" fill="#A8B9A3" opacity="0.5"/>
-      <circle cx="50" cy="118" r="5" fill="#A8B9A3" opacity="0.45"/>
-      <circle cx="55" cy="76" r="4.5" fill="#A8B9A3" opacity="0.4"/>
-      <circle cx="58" cy="42" r="3.5" fill="#A8B9A3" opacity="0.35"/>
-      <circle cx="52" cy="138" r="3" fill="#D9E1D4" opacity="0.55"/>
-      <circle cx="54" cy="96" r="3" fill="#D9E1D4" opacity="0.5"/>
-      <circle cx="57" cy="58" r="2.5" fill="#D9E1D4" opacity="0.4"/>
+    <!-- Motif botanique organique en background (full-width) -->
+    <svg class="botanical" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- Branche gauche -->
+      <path d="M -20 380 C 30 340, 60 300, 80 250 C 100 200, 90 160, 100 120 C 110 80, 130 50, 140 10" stroke="#83967D" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <path d="M -10 390 C 20 350, 40 310, 55 270 C 70 230, 65 190, 75 150 C 85 110, 100 70, 105 30" stroke="#83967D" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.6"/>
+      <path d="M 80 250 C 50 240, 28 225, 22 210 C 36 205, 58 218, 76 242" fill="#83967D" opacity="0.5"/>
+      <path d="M 90 190 C 60 182, 38 168, 34 154 C 46 150, 66 162, 86 182" fill="#83967D" opacity="0.4"/>
+      <path d="M 100 130 C 74 122, 56 108, 52 96 C 62 93, 80 104, 96 122" fill="#83967D" opacity="0.35"/>
+      <path d="M 85 260 C 110 252, 132 238, 138 224 C 126 220, 106 232, 88 252" fill="#83967D" opacity="0.4"/>
+      <path d="M 95 200 C 120 192, 140 178, 146 164 C 134 160, 114 172, 98 192" fill="#83967D" opacity="0.35"/>
+      <path d="M 105 140 C 128 132, 146 118, 150 106 C 140 103, 122 114, 108 132" fill="#83967D" opacity="0.3"/>
+      <circle cx="78" cy="245" r="6" fill="#A8B9A3" opacity="0.6"/>
+      <circle cx="88" cy="185" r="5" fill="#A8B9A3" opacity="0.5"/>
+      <circle cx="98" cy="128" r="5" fill="#A8B9A3" opacity="0.45"/>
+      <circle cx="106" cy="75" r="4" fill="#A8B9A3" opacity="0.35"/>
+      <circle cx="68" cy="215" r="3.5" fill="#D9E1D4" opacity="0.5"/>
+      <circle cx="100" cy="160" r="3" fill="#D9E1D4" opacity="0.45"/>
+
+      <!-- Branche droite -->
+      <path d="M 1220 370 C 1170 330, 1140 290, 1120 240 C 1100 190, 1110 150, 1100 110 C 1090 70, 1070 40, 1060 5" stroke="#83967D" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <path d="M 1210 380 C 1175 345, 1155 310, 1140 265 C 1125 220, 1135 180, 1125 140 C 1115 100, 1095 65, 1085 25" stroke="#83967D" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.6"/>
+      <path d="M 1120 240 C 1150 232, 1172 218, 1178 204 C 1164 200, 1144 212, 1124 232" fill="#83967D" opacity="0.5"/>
+      <path d="M 1105 180 C 1135 172, 1156 158, 1162 144 C 1148 140, 1128 152, 1108 172" fill="#83967D" opacity="0.4"/>
+      <path d="M 1100 120 C 1126 112, 1144 98, 1148 86 C 1138 83, 1120 94, 1104 112" fill="#83967D" opacity="0.35"/>
+      <path d="M 1125 250 C 1095 242, 1074 228, 1068 214 C 1080 210, 1100 222, 1122 242" fill="#83967D" opacity="0.4"/>
+      <path d="M 1110 190 C 1082 182, 1062 168, 1058 154 C 1068 150, 1088 162, 1106 182" fill="#83967D" opacity="0.35"/>
+      <circle cx="1118" cy="235" r="6" fill="#A8B9A3" opacity="0.6"/>
+      <circle cx="1108" cy="175" r="5" fill="#A8B9A3" opacity="0.5"/>
+      <circle cx="1098" cy="118" r="5" fill="#A8B9A3" opacity="0.45"/>
+      <circle cx="1090" cy="65" r="4" fill="#A8B9A3" opacity="0.35"/>
+      <circle cx="1130" cy="210" r="3.5" fill="#D9E1D4" opacity="0.5"/>
+      <circle cx="1105" cy="148" r="3" fill="#D9E1D4" opacity="0.45"/>
+
+      <!-- Décos centrales -->
+      <path d="M 500 400 C 510 370, 520 350, 515 330" stroke="#A8B9A3" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.4"/>
+      <path d="M 515 330 C 500 322, 490 314, 488 306" fill="#83967D" opacity="0.2"/>
+      <path d="M 515 330 C 528 320, 538 312, 540 304" fill="#83967D" opacity="0.2"/>
+      <circle cx="514" cy="328" r="3.5" fill="#A8B9A3" opacity="0.35"/>
+      <path d="M 700 400 C 695 375, 688 355, 692 335" stroke="#A8B9A3" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.4"/>
+      <path d="M 692 335 C 678 328, 668 320, 666 312" fill="#83967D" opacity="0.2"/>
+      <path d="M 692 335 C 704 326, 714 318, 716 310" fill="#83967D" opacity="0.2"/>
+      <circle cx="691" cy="333" r="3.5" fill="#A8B9A3" opacity="0.35"/>
     </svg>
 
     <div class="inner">
@@ -167,7 +191,7 @@ const formatMonthYear = (d: Date) =>
 <style>
   /* ===== HEADER JOURNAL ===== */
   .journal-header {
-    padding: 180px 40px 100px;
+    padding: 200px 40px 120px;
     background: var(--cream);
     border-bottom: 3px solid var(--sage);
     position: relative;
@@ -175,11 +199,11 @@ const formatMonthYear = (d: Date) =>
   }
   .journal-header .botanical {
     position: absolute;
-    bottom: -10px;
-    left: 40px;
-    width: 120px;
-    height: auto;
-    opacity: 0.55;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.12;
     pointer-events: none;
   }
   .journal-header .inner {
@@ -224,7 +248,7 @@ const formatMonthYear = (d: Date) =>
     padding: 48px 40px 48px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 10px;
     flex-wrap: wrap;
   }
@@ -375,8 +399,8 @@ const formatMonthYear = (d: Date) =>
   }
 
   @media (max-width: 700px) {
-    .journal-header { padding: 140px 20px 72px; }
-    .journal-header .botanical { width: 70px; opacity: 0.35; left: 12px; }
+    .journal-header { padding: 120px 20px 60px; }
+    .journal-header .botanical { opacity: 0.08; }
     .journal-header .top-row {
       flex-direction: column;
       align-items: flex-start;
