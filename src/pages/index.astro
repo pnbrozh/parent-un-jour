@@ -11,12 +11,10 @@ const base = import.meta.env.BASE_URL;
       <h1>Il faut tout un village<br/>pour élever un enfant.</h1>
       <div class="script-line">— bienvenue dans le tien —</div>
       <p class="tagline">
-        Un espace d'accompagnement doux, vrai et documenté —
-        pour les futurs et nouveaux parents.
+        Un espace d'accompagnement et d'exploration pour les futurs et nouveaux parents.
       </p>
       <div class="buttons">
         <a href="#cta" class="btn btn-primary">Rejoindre le village</a>
-        <a href="#qui" class="btn btn-outline">Me rencontrer</a>
       </div>
     </div>
   </section>
@@ -56,6 +54,7 @@ const base = import.meta.env.BASE_URL;
             Alors j'ai commencé à construire le village que j'aurais voulu avoir.
             Pour toi. Pour nous. Pour celles et ceux qui viendront après.
           </p>
+          <a href={`${base}a-propos/`} class="who-more">En savoir plus →</a>
           <div class="signature">— Pascaline</div>
         </div>
       </div>
@@ -65,34 +64,29 @@ const base = import.meta.env.BASE_URL;
   <!-- ===== VALEURS ===== -->
   <section class="valeurs">
     <div class="container">
-      <div class="section-label key">Mes 5 valeurs</div>
+      <div class="section-label key">Mes valeurs</div>
       <h2 class="section-title">Ce qui me guide</h2>
       <div class="section-subtitle">à chaque mot, à chaque partage</div>
       <div class="valeurs-grid">
         <div class="valeur">
           <div class="valeur-number">01</div>
           <div class="valeur-title">Soutien</div>
-          <div class="valeur-desc">Être là, quand il y en a besoin.</div>
+          <div class="valeur-desc">Un espace éducatif pour accompagner et explorer. On prend ce qui nous parle, on laisse ce qui ne résonne pas.</div>
         </div>
         <div class="valeur">
           <div class="valeur-number">02</div>
-          <div class="valeur-title">Authenticité</div>
-          <div class="valeur-desc">Parler vrai, sans filtre.</div>
+          <div class="valeur-title">Légitimité</div>
+          <div class="valeur-desc">Chaque parcours est valide. Tes choix, c'est toi qui les fais. Et ils méritent d'être respectés.</div>
         </div>
         <div class="valeur">
           <div class="valeur-number">03</div>
-          <div class="valeur-title">Respect</div>
-          <div class="valeur-desc">Chaque parcours est valide.</div>
+          <div class="valeur-title">Curiosité</div>
+          <div class="valeur-desc">On reste ouvert·es, on questionne, on évolue. La parentalité, comme la science, est en mouvement.</div>
         </div>
         <div class="valeur">
           <div class="valeur-number">04</div>
-          <div class="valeur-title">Courage</div>
-          <div class="valeur-desc">Avoir le droit de trouver ça dur.</div>
-        </div>
-        <div class="valeur">
-          <div class="valeur-number">05</div>
-          <div class="valeur-title">Basé sur la science</div>
-          <div class="valeur-desc">Des sources vérifiées, une science qui évolue.</div>
+          <div class="valeur-title">Engagement</div>
+          <div class="valeur-desc">Du contenu vérifié, des sources fiables, une information qui évolue avec la recherche.</div>
         </div>
       </div>
     </div>
@@ -155,34 +149,44 @@ const base = import.meta.env.BASE_URL;
       <div class="section-label">Ressources</div>
       <h2 class="section-title">Des repères, pour t'appuyer</h2>
       <div class="section-subtitle">— celles qui m'ont portée, qui pourront te porter aussi —</div>
-      <div class="ressources-grid ressources-grid--compact">
+      <div class="ressources-grid">
 
         <div class="ressource-card">
           <span class="ressource-icon">🏥</span>
-          <div class="ressource-title">Sites &amp; institutions fiables</div>
-          <div class="ressource-intro">Les sources que je cite, validées et reconnues.</div>
+          <div class="ressource-title">Sites fiables</div>
+          <div class="ressource-intro">Des sources validées et reconnues.</div>
           <ul class="ressource-list">
             <li><strong>Naître et grandir</strong><span>portail québécois pour les 0-8 ans</span></li>
-            <li><strong>INSPQ — Santé des mères et enfants</strong><span>données et recommandations officielles</span></li>
-            <li><strong>OMS — Santé maternelle</strong><span>recommandations internationales</span></li>
+            <li><strong>Nourri-Source</strong><span>soutien à l'allaitement au Québec</span></li>
+            <li><strong>Toi, Moi, Bébé</strong><span>bien-être parental en ligne</span></li>
           </ul>
         </div>
 
         <div class="ressource-card">
-          <span class="ressource-icon">📍</span>
-          <div class="ressource-title">À Montréal &amp; au Québec</div>
-          <div class="ressource-intro">Les lieux et services qui tendent la main localement.</div>
+          <span class="ressource-icon">📚</span>
+          <div class="ressource-title">Livres</div>
+          <div class="ressource-intro">Ceux qui m'ont portée à 3h du matin.</div>
           <ul class="ressource-list">
-            <li><strong>CLSC</strong><span>soins post-partum, suivi bébé, vaccination</span></li>
-            <li><strong>Nourri-Source</strong><span>soutien bénévole à l'allaitement</span></li>
-            <li><strong>Info-Social 811</strong><span>ligne d'écoute 24/7</span></li>
+            <li><strong>Le 4e trimestre de la grossesse</strong><span>Ingrid Bayot</span></li>
+            <li><strong>Soyez l'expert de votre bébé</strong><span>Mélanie Bilodeau</span></li>
+            <li><strong>Pour une enfance heureuse</strong><span>Dr Catherine Gueguen</span></li>
+          </ul>
+        </div>
+
+        <div class="ressource-card">
+          <span class="ressource-icon">🎧</span>
+          <div class="ressource-title">Podcasts</div>
+          <div class="ressource-intro">Des voix qui font du bien.</div>
+          <ul class="ressource-list">
+            <li><strong>Ça va maman</strong><span>Dre Lory Zephyr — Québec</span></li>
+            <li><strong>La Matrescence</strong><span>Clémentine Sarlat — France</span></li>
+            <li><strong>Sage-Meuf</strong><span>Anna Roy — France</span></li>
           </ul>
         </div>
 
       </div>
       <p class="ressources-note">
-        Livres, podcasts, comptes inspirants &amp; plus —
-        <a href={`${base}ressources/`} class="ressources-more">découvrir toutes les ressources →</a>
+        <a href={`${base}ressources/`} class="ressources-more">Livres, podcasts &amp; plus — découvrir toutes les ressources →</a>
       </p>
     </div>
   </section>
@@ -277,6 +281,16 @@ const base = import.meta.env.BASE_URL;
     color: var(--terra); font-size: 32px;
     margin-top: 20px;
   }
+  .who-text .who-more {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 14px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.8px;
+    color: var(--terra);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .who-text .who-more:hover { color: var(--slate); }
   @media (max-width: 768px) {
     .who-grid { grid-template-columns: 1fr; gap: 40px; }
   }
