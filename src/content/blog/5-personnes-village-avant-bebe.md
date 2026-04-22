@@ -8,6 +8,7 @@ piliers:
   - Le village
   - Se préparer en couple
 featured: false
+draft: true
 thumbnailEmoji: "🤝"
 readingTime: "5 min"
 tags:
