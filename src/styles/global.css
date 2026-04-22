@@ -679,6 +679,28 @@ section { padding: 100px 40px; }
   padding-left: 16px;
 }
 .article-body li { margin-bottom: 10px; }
+.article-body hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--sage-light), transparent);
+  margin: 48px auto;
+  max-width: 200px;
+}
+.article-signature {
+  font-family: 'La Belle Aurore', cursive;
+  font-size: 24px;
+  color: var(--terra);
+  text-align: center;
+  margin: 48px 0 32px;
+  line-height: 1.5;
+}
+.article-signature em {
+  font-family: 'Georgia', serif;
+  font-size: 14px;
+  color: var(--slate);
+  opacity: 0.7;
+  font-style: italic;
+}
 .article-body blockquote {
   border-left: 4px solid var(--terra);
   padding: 14px 24px;

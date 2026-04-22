@@ -7,7 +7,7 @@ axisLabel: "Créer son village"
 piliers:
   - Le village
   - Se préparer en couple
-featured: true
+featured: false
 thumbnailEmoji: "🤝"
 readingTime: "5 min"
 tags:
