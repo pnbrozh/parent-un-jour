@@ -1,0 +1,212 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  title="Mentions légales — Parent un jour"
+  description="Mentions légales du site Parent un jour. Transparence sur l'éditrice, l'hébergement, les données personnelles et les cookies."
+>
+
+  <!-- ===== HEADER ===== -->
+  <header class="legal-header">
+    <h1>Mentions légales</h1>
+    <p class="subtitle">Transparence et confiance, comme dans tout le reste.</p>
+  </header>
+
+  <!-- ===== CONTENT ===== -->
+  <main class="legal-content">
+
+    <section class="legal-section">
+      <h2>Éditrice du site</h2>
+      <div class="info-block">
+        <p><strong>Pascaline Nourry</strong></p>
+        <p>Montréal, Québec, Canada</p>
+        <p>Courriel&nbsp;: <a href="mailto:pascaline.nry@gmail.com">pascaline.nry@gmail.com</a></p>
+      </div>
+      <p>
+        Le site <strong>parentunjour.ca</strong> est un projet personnel à vocation informative.
+        Il ne constitue pas un service professionnel de santé, de consultation ou de vente.
+      </p>
+    </section>
+
+    <section class="legal-section">
+      <h2>Hébergement</h2>
+      <p>Ce site est hébergé par <strong>GitHub Pages</strong>, un service de GitHub, Inc.</p>
+      <div class="info-block">
+        <p><strong>GitHub, Inc.</strong></p>
+        <p>88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis</p>
+        <p>Site&nbsp;: <a href="https://github.com" target="_blank" rel="noopener">github.com</a></p>
+      </div>
+    </section>
+
+    <section class="legal-section">
+      <h2>Propriété intellectuelle</h2>
+      <p>
+        L'ensemble du contenu de ce site — textes, images, illustrations, mise en page —
+        est la propriété de Pascaline Nourry, sauf mention contraire.
+      </p>
+      <p>
+        Toute reproduction, même partielle, est soumise à autorisation préalable.
+        Vous pouvez me contacter par courriel pour toute demande.
+      </p>
+    </section>
+
+    <section class="legal-section">
+      <h2>Données personnelles</h2>
+      <p>
+        Ce site ne collecte aucune donnée personnelle directement. Aucun formulaire
+        d'inscription, aucun cookie de suivi, aucun outil d'analyse tiers n'est actuellement utilisé.
+      </p>
+      <p>
+        Si vous me contactez par courriel, vos informations sont utilisées uniquement
+        pour répondre à votre message et ne sont jamais partagées avec des tiers.
+      </p>
+      <p>
+        Conformément à la <strong>Loi 25 du Québec</strong> sur la protection des renseignements
+        personnels et au <strong>Règlement général sur la protection des données (RGPD)</strong>,
+        vous disposez d'un droit d'accès, de rectification et de suppression de vos données.
+        Pour exercer ces droits, contactez-moi à
+        <a href="mailto:pascaline.nry@gmail.com">pascaline.nry@gmail.com</a>.
+      </p>
+    </section>
+
+    <section class="legal-section">
+      <h2>Cookies</h2>
+      <p>
+        Ce site n'utilise pas de cookies. Aucun traceur publicitaire ni outil d'analyse
+        n'est en place. L'hébergeur (GitHub Pages) peut collecter certaines données
+        techniques (adresse IP, logs de connexion) conformément à sa propre
+        <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">politique de confidentialité</a>.
+      </p>
+    </section>
+
+    <section class="legal-section">
+      <h2>Limitation de responsabilité</h2>
+      <p>
+        Les informations publiées sur ce site sont proposées à titre informatif et ne
+        remplacent en aucun cas l'avis d'un·e professionnel·le de santé. Pascaline Nourry
+        ne saurait être tenue responsable de l'utilisation qui pourrait être faite des
+        contenus ou des liens externes proposés.
+      </p>
+      <p>
+        Les liens vers des sites tiers sont fournis pour information. Leur présence
+        ne constitue pas une approbation de leur contenu.
+      </p>
+    </section>
+
+    <section class="legal-section">
+      <h2>Crédits</h2>
+      <p>
+        Typographies&nbsp;: Georgia, La Belle Aurore, Lato — via
+        <a href="https://fonts.google.com" target="_blank" rel="noopener">Google Fonts</a>.
+      </p>
+      <p>Icônes et illustrations&nbsp;: à venir.</p>
+    </section>
+
+    <p class="last-updated">Dernière mise à jour&nbsp;: avril 2026</p>
+
+  </main>
+
+</Layout>
+
+<style>
+  /* ===== HEADER ===== */
+  .legal-header {
+    padding: 160px 40px 60px;
+    background: linear-gradient(170deg, var(--cream) 0%, var(--offwhite) 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .legal-header::before {
+    content: "";
+    position: absolute;
+    top: 30%; left: -5%;
+    width: 180px; height: 180px;
+    background: var(--sage); opacity: 0.05;
+    border-radius: 50%; filter: blur(50px);
+  }
+  .legal-header h1 {
+    font-family: 'Georgia', serif;
+    font-size: clamp(28px, 4vw, 42px);
+    color: var(--slate);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0 auto 12px;
+    position: relative; z-index: 1;
+  }
+  .legal-header .subtitle {
+    font-size: 16px;
+    color: var(--slate);
+    opacity: 0.7;
+    max-width: 480px;
+    margin: 0 auto;
+    position: relative; z-index: 1;
+  }
+
+  /* ===== CONTENT ===== */
+  .legal-content {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 60px 40px 100px;
+  }
+  .legal-section { margin-bottom: 48px; }
+  .legal-section h2 {
+    font-family: 'Georgia', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--slate);
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--sage-light);
+  }
+  .legal-section p {
+    margin-bottom: 12px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--slate);
+  }
+  .legal-section a {
+    color: var(--terra);
+    text-decoration: none;
+    border-bottom: 1px solid var(--terra-light);
+    transition: color 0.3s, border-color 0.3s;
+  }
+  .legal-section a:hover {
+    color: var(--sage);
+    border-color: var(--sage-light);
+  }
+
+  .info-block {
+    background: var(--cream);
+    border-left: 3px solid var(--sage);
+    padding: 20px 24px;
+    border-radius: 0 8px 8px 0;
+    margin: 16px 0;
+  }
+  .info-block p {
+    margin-bottom: 6px;
+    font-size: 15px;
+  }
+  .info-block p:last-child { margin-bottom: 0; }
+
+  .last-updated {
+    text-align: center;
+    font-size: 13px;
+    color: var(--slate);
+    opacity: 0.6;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid var(--sage-light);
+  }
+
+  @media (max-width: 768px) {
+    .legal-header { padding: 130px 24px 50px; }
+    .legal-content { padding: 40px 24px 80px; }
+    .legal-section h2 { font-size: 20px; }
+    .info-block { padding: 16px 18px; }
+  }
+  @media (max-width: 480px) {
+    .legal-header { padding: 110px 20px 40px; }
+    .legal-content { padding: 32px 20px 60px; }
+  }
+</style>
