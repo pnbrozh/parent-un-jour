@@ -642,7 +642,7 @@ section { padding: 100px 40px; }
 .article-hero .subtitle {
   font-family: 'La Belle Aurore', cursive;
   color: var(--terra);
-  font-size: 22px;
+  font-size: clamp(28px, 3.5vw, 36px);
   margin-bottom: 28px;
   position: relative; z-index: 1;
 }
@@ -790,11 +790,12 @@ section { padding: 100px 40px; }
 }
 .article-body .stat-card .number {
   font-family: 'Georgia', serif;
-  font-size: 28px;
+  font-size: 22px;
   color: var(--terra);
   font-weight: 400;
   display: block;
   margin-bottom: 8px;
+  white-space: nowrap;
 }
 .article-body .stat-card .desc {
   font-size: 14px;
@@ -843,20 +844,18 @@ section { padding: 100px 40px; }
   margin-bottom: 0;
 }
 
-/* Valeur item (ligne dans highlight-block) */
+/* Valeur item (nom au-dessus du texte) */
 .article-body .valeur-item {
   display: flex;
-  gap: 16px;
-  margin: 20px 0;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 6px;
+  margin: 24px 0;
 }
 .article-body .valeur-item .valeur-name {
   font-family: 'Georgia', serif;
   font-size: 17px;
   color: var(--terra);
   font-weight: 400;
-  min-width: 120px;
-  flex-shrink: 0;
 }
 .article-body .valeur-item .valeur-desc {
   font-size: 16px;
@@ -1000,8 +999,7 @@ section { padding: 100px 40px; }
 @media (max-width: 640px) {
   .article-hero { padding: 130px 20px 60px; }
   .article-body { padding: 40px 20px 60px; }
-  .article-body .valeur-item { flex-direction: column; gap: 4px; }
-  .article-body .valeur-item .valeur-name { min-width: auto; }
+  .article-body .valeur-item { gap: 4px; }
   .article-body .stats-row { grid-template-columns: 1fr; }
   .person-card { padding: 24px 20px; }
   .cta-bottom { padding: 56px 20px; }
