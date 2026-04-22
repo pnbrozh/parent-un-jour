@@ -13,19 +13,11 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await render(post);
 
-const base = import.meta.env.BASE_URL;
+const heroLabel = post.data.heroLabel ?? 'Le journal du village';
 
-const publishDateFormatted = post.data.publishDate.toLocaleDateString('fr-CA', {
-  year: 'numeric', month: 'long', day: 'numeric',
-});
-
-const axisHref: Record<string, string> = {
-  'creer-son-village': `${base}le-village/creer-son-village/`,
-  'couple-coparent': `${base}le-village/couple-coparent/`,
-  'postnatal': `${base}le-village/postnatal/`,
-  'general': `${base}le-journal/`,
-};
-const ctaHref = axisHref[post.data.axis];
+const monthYear = post.data.publishDate
+  .toLocaleDateString('fr-CA', { year: 'numeric', month: 'long' })
+  .replace(/^./, (c) => c.toUpperCase());
 ---
 <Layout
   title={post.data.title}
@@ -37,27 +29,46 @@ const ctaHref = axisHref[post.data.axis];
   author={post.data.author}
   tags={post.data.tags}
 >
+
+  <!-- ===== HERO ===== -->
   <header class="article-hero">
-    <div class="article-hero-inner">
-      <p class="article-meta">
-        <a href={`${base}le-journal/`}>Le journal</a>
-        <span class="dot">·</span>
-        <a href={ctaHref}>{post.data.axisLabel}</a>
-      </p>
-      <h1>{post.data.title}</h1>
-      <p class="subtitle">{post.data.description}</p>
-      <p class="publish">Publié le {publishDateFormatted}</p>
+    <div class="label">{heroLabel}</div>
+    <h1>{post.data.title}</h1>
+    {post.data.heroSubtitle && <div class="subtitle">{post.data.heroSubtitle}</div>}
+    <div class="meta">
+      {monthYear}
+      {post.data.readingTime && (<>
+        <span>·</span> {post.data.readingTime} de lecture
+      </>)}
     </div>
   </header>
 
+  <!-- ===== BODY ===== -->
   <article class="article-body">
     <Content />
   </article>
 
-  <section class="article-cta">
-    <p class="label">Aller plus loin</p>
-    <h2>Prêt·e à aller plus loin&nbsp;?</h2>
-    <p class="cursive">un pas à la fois</p>
-    <a href={ctaHref} class="btn btn-primary">Découvrir «&nbsp;{post.data.axisLabel}&nbsp;»</a>
+  <!-- ===== SOURCES ===== -->
+  {post.data.sources && post.data.sources.length > 0 && (
+    <div class="sources">
+      <h4>Sources</h4>
+      <ul>
+        {post.data.sources.map((s) => (
+          <li>
+            {s.url
+              ? <a href={s.url} target="_blank" rel="noopener">{s.text}</a>
+              : s.text}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
+
+  <!-- ===== CTA BOTTOM ===== -->
+  <section class="cta-bottom">
+    <div class="label">Rejoins le village</div>
+    <h3>Envie de suivre la suite&nbsp;?</h3>
+    <a href="https://www.instagram.com/parentunjour" class="btn btn-terra" target="_blank" rel="noopener">Suivre sur Instagram</a>
   </section>
+
 </Layout>

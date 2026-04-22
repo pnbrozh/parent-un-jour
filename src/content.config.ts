@@ -35,6 +35,15 @@ const blog = defineCollection({
     readingTime: z.string().optional(),
     // Mots-clés SEO (invisibles sur le site, utilisés pour les meta et JSON-LD)
     tags: z.array(z.string()).default([]),
+    // Hero de l'article — optionnel, sinon défaut "Le journal du village"
+    heroLabel: z.string().optional(),
+    // Ligne cursive sous le titre (ex: "là où tout commence")
+    heroSubtitle: z.string().optional(),
+    // Sources (bibliographiques) rendues hors du corps, après l'article
+    sources: z.array(z.object({
+      text: z.string(),
+      url: z.string().optional(),
+    })).optional(),
   }),
 });
 

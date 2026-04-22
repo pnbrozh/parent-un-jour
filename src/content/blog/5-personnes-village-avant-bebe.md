@@ -16,6 +16,13 @@ tags:
   - personnes essentielles nouveau parent
   - isolement parental
   - réseau de soutien périnatal
+sources:
+  - text: "MSSS Québec — Plan d'action en périnatalité et petite enfance (PAPPE) 2023-2028"
+    url: https://publications.msss.gouv.qc.ca/msss/fichiers/2023/23-918-37W.pdf
+  - text: "INSPQ — Portail d'information périnatale"
+    url: https://www.inspq.qc.ca/information-perinatale
+  - text: "INSPQ — Mieux vivre avec notre enfant, de la grossesse à deux ans"
+  - text: "OMS — Recommandations sur les soins prénatals pour que la grossesse soit une expérience positive (2016)"
 ---
 
 Tu as sûrement déjà entendu le proverbe *« Il faut tout un village pour élever un enfant »*. Mais concrètement, c'est quoi un village en 2026, quand on habite en ville et que la famille est parfois loin&nbsp;?
@@ -102,13 +109,3 @@ Le simple fait de te poser la question «&nbsp;qui est dans mon village&nbsp;?&n
 <strong>À retenir&nbsp;:</strong> Le village, ce n'est pas un luxe. C'est un besoin fondamental reconnu par la recherche et par les politiques de santé publique. Tu as le droit d'être accompagné·e.
 </div>
 
-<div class="article-sources">
-
-### Sources
-
-- MSSS — Plan d'action en périnatalité et petite enfance (PAPPE) 2023-2028
-- INSPQ — Portail d'information périnatale
-- INSPQ — *Mieux vivre avec notre enfant, de la grossesse à deux ans*
-- OMS — Recommandations sur les soins prénatals pour que la grossesse soit une expérience positive (2016)
-
-</div>
