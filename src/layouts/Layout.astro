@@ -137,8 +137,11 @@ const siteName = 'Parent un jour';
     <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
     <Nav />
-    <slot />
+    <main id="main-content">
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>
