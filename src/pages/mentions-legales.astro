@@ -111,7 +111,7 @@ import Layout from '../layouts/Layout.astro';
 <style>
   /* ===== HEADER ===== */
   .legal-header {
-    padding: 160px 40px 60px;
+    padding: 120px 40px 32px;
     background: linear-gradient(170deg, var(--cream) 0%, var(--offwhite) 100%);
     text-align: center;
     position: relative;
@@ -147,22 +147,22 @@ import Layout from '../layouts/Layout.astro';
   .legal-content {
     max-width: 760px;
     margin: 0 auto;
-    padding: 32px 40px 56px;
+    padding: 24px 40px 40px;
   }
-  .legal-section { margin-bottom: 16px; }
+  .legal-section { margin-bottom: 8px; }
   .legal-section h2 {
     font-family: 'Georgia', serif;
-    font-size: 19px;
+    font-size: 18px;
     font-weight: 400;
     color: var(--slate);
-    margin-bottom: 8px;
-    padding-bottom: 6px;
+    margin-bottom: 4px;
+    padding-bottom: 4px;
     border-bottom: 1px solid var(--sage-light);
   }
   .legal-section p {
-    margin-bottom: 6px;
-    font-size: 15px;
-    line-height: 1.55;
+    margin-bottom: 4px;
+    font-size: 14.5px;
+    line-height: 1.5;
     color: var(--slate);
   }
   .legal-section a {
@@ -179,14 +179,14 @@ import Layout from '../layouts/Layout.astro';
   .info-block {
     background: var(--cream);
     border-left: 3px solid var(--sage);
-    padding: 12px 16px;
+    padding: 10px 14px;
     border-radius: 0 8px 8px 0;
-    margin: 8px 0;
+    margin: 6px 0;
   }
   .info-block p {
-    margin-bottom: 2px;
-    font-size: 14px;
-    line-height: 1.5;
+    margin-bottom: 1px;
+    font-size: 13.5px;
+    line-height: 1.45;
   }
   .info-block p:last-child { margin-bottom: 0; }
 
@@ -195,19 +195,14 @@ import Layout from '../layouts/Layout.astro';
     font-size: 13px;
     color: var(--slate);
     opacity: 0.6;
-    margin-top: 20px;
-    padding-top: 16px;
+    margin-top: 14px;
+    padding-top: 12px;
     border-top: 1px solid var(--sage-light);
   }
 
   @media (max-width: 768px) {
-    .legal-header { padding: 130px 24px 50px; }
-    .legal-content { padding: 40px 24px 80px; }
-    .legal-section h2 { font-size: 20px; }
-    .info-block { padding: 16px 18px; }
-  }
-  @media (max-width: 480px) {
-    .legal-header { padding: 110px 20px 40px; }
-    .legal-content { padding: 32px 20px 60px; }
+    .legal-header { padding: 100px 20px 28px; }
+    .legal-content { padding: 20px 20px 40px; }
+    .info-block { padding: 10px 14px; }
   }
 </style>
