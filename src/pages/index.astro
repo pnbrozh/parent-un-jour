@@ -54,7 +54,6 @@ const base = import.meta.env.BASE_URL;
             Alors j'ai commencé à construire le village que j'aurais voulu avoir.
             Pour toi. Pour nous. Pour celles et ceux qui viendront après.
           </p>
-          <a href={`${base}a-propos/`} class="who-more">En savoir plus →</a>
           <div class="signature">— Pascaline</div>
         </div>
       </div>
@@ -295,13 +294,13 @@ const base = import.meta.env.BASE_URL;
     .who-grid { grid-template-columns: 1fr; gap: 40px; }
   }
 
-  /* ===== VALEURS (5 côte à côte) ===== */
+  /* ===== VALEURS (4 côte à côte) ===== */
   .valeurs { background: var(--sage-light); }
   .valeurs-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 16px;
-    max-width: 1180px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1100px;
     margin: 0 auto;
   }
   .valeur {
@@ -331,10 +330,10 @@ const base = import.meta.env.BASE_URL;
     color: var(--slate); opacity: 0.9;
   }
   @media (max-width: 980px) {
-    .valeurs-grid { grid-template-columns: repeat(3, 1fr); }
-  }
-  @media (max-width: 640px) {
     .valeurs-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 540px) {
+    .valeurs-grid { grid-template-columns: 1fr; }
   }
 
   /* ===== AXES ===== */
@@ -438,8 +437,9 @@ const base = import.meta.env.BASE_URL;
   .ressources { background: var(--cream); }
   .ressources-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+    align-items: stretch;
   }
   .ressource-card {
     background: var(--white);
@@ -447,6 +447,8 @@ const base = import.meta.env.BASE_URL;
     border-radius: 14px;
     border: 1px solid rgba(168, 185, 163, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
   }
   .ressource-card:hover {
     transform: translateY(-4px);
@@ -505,7 +507,10 @@ const base = import.meta.env.BASE_URL;
     max-width: 960px;
     margin: 0 auto;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 960px) {
+    .ressources-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
     .ressources-grid,
     .ressources-grid--compact {
       grid-template-columns: 1fr;
