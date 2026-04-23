@@ -1,8 +1,8 @@
 :root {
-  --sage: #83967D;
+  --sage: #6B7E66;      /* ⬇ assombri pour contraste AA (était #83967D) */
   --sage-soft: #A8B9A3;
   --sage-light: #D9E1D4;
-  --terra: #C88F7C;
+  --terra: #AD6D58;     /* ⬇ assombri pour contraste AA (était #C88F7C) */
   --terra-soft: #D9A796;
   --terra-light: #F0DDD2;
   --slate: #4C5861;
