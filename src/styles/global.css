@@ -297,6 +297,11 @@ nav.site-nav .dd-sub {
     justify-content: space-between;
     align-items: center;
     gap: 10px;
+    width: 100%;
+    padding: 16px 24px;
+    font-size: 15px;
+    text-align: left;
+    color: var(--slate);
   }
   nav.site-nav .has-dd .dd-panel {
     position: static;
