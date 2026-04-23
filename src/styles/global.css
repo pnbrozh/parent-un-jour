@@ -180,9 +180,27 @@ nav.site-nav.is-open .nav-toggle-bar:nth-child(3) {
 
 /* Dropdown (desktop — hover) */
 nav.site-nav .has-dd { position: relative; }
+/* Le bouton dd-trigger doit ressembler à un lien nav */
+nav.site-nav .dd-trigger {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 14px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--slate);
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.3s;
+}
+nav.site-nav .dd-trigger:hover { color: var(--terra-ink); }
 nav.site-nav .has-dd .chev {
   font-size: 10px; margin-left: 4px; opacity: .6;
   display: inline-block; transition: transform 0.2s;
+}
+/* Chev tourne quand le dropdown est ouvert (mobile & desktop) */
+nav.site-nav .has-dd.is-open > .dd-trigger .chev {
+  transform: rotate(180deg);
 }
 nav.site-nav .dd-panel {
   position: absolute; top: 100%; left: -16px;

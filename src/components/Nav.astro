@@ -21,9 +21,9 @@ const base = import.meta.env.BASE_URL;
   <ul id="site-menu" class="nav-menu">
     <li><a href={base}>Accueil</a></li>
     <li class="has-dd">
-      <a href={`${base}#axes`} class="dd-trigger">
+      <button type="button" class="dd-trigger" aria-expanded="false" aria-haspopup="true">
         Le village <span class="chev" aria-hidden="true">▾</span>
-      </a>
+      </button>
       <div class="dd-panel">
         <a href={`${base}le-village/creer-son-village/`} class="dd-item">
           <div class="dd-title">Créer son village</div>
@@ -73,14 +73,21 @@ const base = import.meta.env.BASE_URL;
       });
     });
 
-    // Dropdown: on mobile, click "Le village" toggles sub-menu
+    // Dropdown trigger : clic toggle le sous-menu (mobile + desktop)
+    // Sur desktop le hover CSS gère déjà l'ouverture, mais le clic
+    // permet aussi d'ouvrir pour les utilisateurs clavier / touch
     const ddTrigger = nav.querySelector('.has-dd > .dd-trigger');
     const ddParent = ddTrigger?.parentElement;
     if (ddTrigger && ddParent) {
-      ddTrigger.addEventListener('click', (e) => {
-        if (isMobile()) {
-          e.preventDefault();
-          ddParent.classList.toggle('is-open');
+      ddTrigger.addEventListener('click', () => {
+        const open = ddParent.classList.toggle('is-open');
+        ddTrigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      // Clic en dehors ferme le dropdown (desktop)
+      document.addEventListener('click', (e) => {
+        if (!ddParent.contains(e.target) && ddParent.classList.contains('is-open')) {
+          ddParent.classList.remove('is-open');
+          ddTrigger.setAttribute('aria-expanded', 'false');
         }
       });
     }
@@ -104,6 +111,7 @@ const base = import.meta.env.BASE_URL;
       }
       if (ddParent?.classList.contains('is-open')) {
         ddParent.classList.remove('is-open');
+        ddTrigger?.setAttribute('aria-expanded', 'false');
         ddTrigger?.focus();
       }
     });
