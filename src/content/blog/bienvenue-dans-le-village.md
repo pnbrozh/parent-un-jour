@@ -118,14 +118,14 @@ Parent un jour, c'est un espace construit autour de trois grands axes, trois pil
 <div class="axe-block">
   <span class="axe-emoji">🏘️</span>
   <h3>Créer son village</h3>
-  <p>Avant même l'arrivée de bébé, il y a des choses à mettre en place. Pas un registre de cadeaux, un réseau. Ton cercle proche, tes professionnel·les de santé, les ressources communautaires de ton quartier, les gens qui seront là quand tu en auras besoin.</p>
+  <p>Avant même l'arrivée de bébé, il y a des choses à mettre en place. Pas un registre de cadeaux, mais un réseau. Ton cercle proche, tes professionnel·les de santé, les ressources communautaires de ton quartier, les gens qui seront là quand tu en auras besoin.</p>
   <p style="margin-top: 12px;">Le village existe, il faut juste savoir où le chercher et comment le mettre en place. Et c'est exactement ce qu'on fait ici.</p>
 </div>
 
 <div class="axe-block">
   <span class="axe-emoji">💛</span>
   <h3>Le couple, le coparent, la communication familiale</h3>
-  <p>Personne ne t'avertit vraiment de ce qui arrive au couple quand bébé débarque. Le manque de sommeil, la charge mentale qui explose, les rôles qui se redistribuent (ou pas), les conversations qu'on repousse parce qu'on est trop fatigués.</p>
+  <p>Personne ne t'avertit vraiment de ce qui arrive au couple quand bébé débarque. Le manque de sommeil, la charge mentale qui explose, les rôles qui se redistribuent, les conversations qu'on repousse parce qu'on est trop fatigués.</p>
   <p style="margin-top: 12px;">Ici, on en parle. Sans tabou, sans jugement. Que tu sois en couple, monoparent·e, en coparentalité, en famille recomposée — ton modèle est valide. Et il mérite des outils concrets pour traverser cette transition.</p>
 </div>
 
