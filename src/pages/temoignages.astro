@@ -12,95 +12,19 @@ import Layout from '../layouts/Layout.astro';
     <h1>Témoignages</h1>
     <div class="subtitle">parce qu'on se sent moins seul·e quand on se reconnaît</div>
     <p class="intro">
-      Des parents partagent ici un bout de leur histoire — les moments flous, les découvertes,
+      Cet espace se construira au fil des partages — les moments flous, les découvertes,
       les petites victoires. Pas de filtre, pas de jugement. Juste du vrai.
     </p>
   </header>
 
-  <!-- ===== TÉMOIGNAGES ===== -->
+  <!-- ===== EMPTY STATE ===== -->
   <section class="section-temoignages">
-    <div class="temoignages-grid">
-
-      <!-- Featured -->
-      <figure class="temoignage-featured">
-        <div class="temoignage-quote-mark" aria-hidden="true">"</div>
-        <span class="temoignage-tag tag-postpartum">Post-partum</span>
-        <blockquote class="temoignage-text"><p>
-          Les premières semaines après la naissance, je me sentais complètement perdue. Tout le monde me disait «&nbsp;profite, ça passe vite&nbsp;» et moi je comptais les heures. J'ai mis du temps à comprendre que ce que je vivais était normal, et surtout que j'avais le droit de ne pas aller bien. Ce qui m'a aidée, c'est de tomber sur des témoignages de parents qui disaient la même chose. Ça m'a donné la permission de demander de l'aide.
-        </p></blockquote>
-        <figcaption class="temoignage-author">
-          <div class="temoignage-avatar avatar-terra" aria-hidden="true">C</div>
-          <div class="temoignage-author-info">
-            <span class="temoignage-name">Camille</span>
-            <span class="temoignage-context">Maman d'un bébé de 8 mois · Montréal</span>
-          </div>
-        </figcaption>
-      </figure>
-
-      <!-- Card 1 -->
-      <figure class="temoignage-card">
-        <div class="temoignage-quote-mark" aria-hidden="true">"</div>
-        <span class="temoignage-tag tag-couple">Couple</span>
-        <blockquote class="temoignage-text"><p>
-          On ne nous avait pas prévenus que le couple prendrait un tel coup. On s'aimait, mais on ne se comprenait plus. C'est en en parlant à d'autres parents qu'on a réalisé que c'était une étape, pas une fin. Aujourd'hui ça va mieux. Différemment, mais mieux.
-        </p></blockquote>
-        <figcaption class="temoignage-author">
-          <div class="temoignage-avatar avatar-sage" aria-hidden="true">A</div>
-          <div class="temoignage-author-info">
-            <span class="temoignage-name">Alex</span>
-            <span class="temoignage-context">Papa de jumeaux de 2 ans</span>
-          </div>
-        </figcaption>
-      </figure>
-
-      <!-- Card 2 -->
-      <figure class="temoignage-card">
-        <div class="temoignage-quote-mark" aria-hidden="true">"</div>
-        <span class="temoignage-tag tag-village">Village</span>
-        <blockquote class="temoignage-text"><p>
-          Je suis arrivée à Montréal enceinte, sans famille autour. Je pensais que je devais tout gérer seule. Et puis j'ai découvert des groupes de mamans, une halte-garderie, une voisine qui gardait mon bébé le temps que je dorme une heure. Mon village, je l'ai construit petit à petit.
-        </p></blockquote>
-        <figcaption class="temoignage-author">
-          <div class="temoignage-avatar avatar-terra" aria-hidden="true">S</div>
-          <div class="temoignage-author-info">
-            <span class="temoignage-name">Sofia</span>
-            <span class="temoignage-context">Maman d'une fille de 3 ans · Villeray</span>
-          </div>
-        </figcaption>
-      </figure>
-
-      <!-- Card 3 -->
-      <figure class="temoignage-card">
-        <div class="temoignage-quote-mark" aria-hidden="true">"</div>
-        <span class="temoignage-tag tag-postpartum">Post-partum</span>
-        <blockquote class="temoignage-text"><p>
-          En tant que papa, j'avais l'impression que je n'avais pas le droit de me sentir dépassé. Ma conjointe vivait tellement de choses physiquement que mes difficultés me semblaient dérisoires. Mais la fatigue, le doute, la pression de «&nbsp;bien faire&nbsp;» était aussi présente pour moi.
-        </p></blockquote>
-        <figcaption class="temoignage-author">
-          <div class="temoignage-avatar avatar-slate" aria-hidden="true">M</div>
-          <div class="temoignage-author-info">
-            <span class="temoignage-name">Mathieu</span>
-            <span class="temoignage-context">Papa d'un bébé de 5 mois</span>
-          </div>
-        </figcaption>
-      </figure>
-
-      <!-- Card 4 (anonymous) -->
-      <figure class="temoignage-card">
-        <div class="temoignage-quote-mark" aria-hidden="true">"</div>
-        <span class="temoignage-tag tag-village">Village</span>
-        <blockquote class="temoignage-text"><p>
-          J'ai longtemps eu honte de ne pas tout savoir. On dirait que les autres parents naissent avec un mode d'emploi. Et puis j'ai compris : personne ne sait vraiment. On apprend tous·tes en chemin. Et demander de l'aide, c'est pas un échec, c'est le début du village.
-        </p></blockquote>
-        <figcaption class="temoignage-author">
-          <div class="temoignage-avatar avatar-sage" aria-hidden="true">♡</div>
-          <div class="temoignage-author-info">
-            <span class="temoignage-name">Anonyme</span>
-            <span class="temoignage-context">Parent d'un enfant de 18 mois</span>
-          </div>
-        </figcaption>
-      </figure>
-
+    <div class="temoignages-empty">
+      <div class="empty-icon" aria-hidden="true">🌱</div>
+      <p class="empty-text">
+        Les premiers récits arriveront bientôt.<br/>
+        Tu veux être la première voix à se partager&nbsp;?
+      </p>
     </div>
   </section>
 
@@ -201,6 +125,26 @@ import Layout from '../layouts/Layout.astro';
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
+  }
+
+  /* ===== EMPTY STATE ===== */
+  .temoignages-empty {
+    max-width: 560px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 60px 20px;
+  }
+  .temoignages-empty .empty-icon {
+    font-size: 48px;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+  .temoignages-empty .empty-text {
+    font-family: 'Georgia', serif;
+    font-size: 19px;
+    line-height: 1.6;
+    color: var(--slate);
+    font-style: italic;
   }
 
   /* ===== CARTE ===== */
