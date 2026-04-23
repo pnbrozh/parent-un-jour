@@ -72,7 +72,7 @@ body {
   color: var(--slate);
   background: var(--offwhite);
   line-height: 1.65;
-  font-weight: 400; /* passé de 300 à 400 pour meilleure lisibilité */
+  font-weight: 300; /* Lato Light (identité originale, plus aérée) */
 }
 
 /* =========================================================================
