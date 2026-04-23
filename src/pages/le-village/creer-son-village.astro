@@ -51,7 +51,7 @@ const base = import.meta.env.BASE_URL;
         </div>
         <div class="stat-card">
           <div class="stat-number">1 sur 3</div>
-          <div class="stat-label">parents ayant un enfant de 4 ans ou moins rapportent avoir vécu des symptômes dépressifs ou de l'anxiété affectant leurs activités quotidiennes en période périnatale</div>
+          <div class="stat-label">parent ayant un enfant de 4 ans ou moins rapporte avoir vécu des symptômes dépressifs ou de l'anxiété affectant ses activités quotidiennes en période périnatale</div>
           <div class="stat-source"><a href="https://www.rcrpq.com/2026/03/02/nouvelles-donnees-sur-la-sante-mentale-perinatale/" target="_blank" rel="noopener">Réseau des CRP</a>, sondage TACT 2026</div>
         </div>
       </div>
@@ -68,7 +68,7 @@ const base = import.meta.env.BASE_URL;
     <div class="container">
       <div class="section-label key">Le coeur du projet</div>
       <h2 class="section-title">C'est quoi, un village ?</h2>
-      <div class="section-subtitle">toutes les personnes qui seront là pour toi</div>
+      <div class="section-subtitle">toutes les personnes qui seront là pour toi, pour vous</div>
 
       <p class="village-intro">
         Un village, ce n'est pas un idéal inaccessible. Ce n'est pas avoir une famille parfaite
@@ -81,8 +81,8 @@ const base = import.meta.env.BASE_URL;
           <span class="village-cat-icon" aria-hidden="true">🤝</span>
           <h3 class="village-cat-title">Le cercle proche</h3>
           <div class="village-cat-list">
-            <span>Ton ou ta partenaire — en équipe, pas en solo</span>
-            <span>Ta mère, ta belle-mère, un·e ami·e proche</span>
+            <span>Ta mère, ton père, ta belle-famille, un·e ami·e proche</span>
+            <span>La personne qui te connaît depuis longtemps, avant bébé</span>
             <span>La personne que tu peux appeler à 3h du matin</span>
             <span>Celle qui viendra sans que tu demandes</span>
           </div>
@@ -266,7 +266,7 @@ const base = import.meta.env.BASE_URL;
 
         <div class="checklist-cta">
           <p>Tu veux garder cette check-list ? Télécharge la version PDF imprimable.</p>
-          <a href="#" class="btn btn-terra">Télécharger la check-list (PDF)</a>
+          <a href={`${base}pdf/ma-checklist-du-village.pdf`} class="btn btn-terra" download>Télécharger la check-list (PDF)</a>
         </div>
       </div>
     </div>
