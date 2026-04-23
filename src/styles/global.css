@@ -72,7 +72,13 @@ body {
   color: var(--slate);
   background: var(--offwhite);
   line-height: 1.65;
-  font-weight: 300; /* Lato Light (identité originale, plus aérée) */
+  font-weight: 300; /* Desktop : Lato Light (identité aérée) */
+}
+
+/* Mobile : Lato Regular 400 pour meilleure lisibilité
+   (les traits fins de Light rendent moins bien sur petits écrans) */
+@media (max-width: 768px) {
+  body { font-weight: 400; }
 }
 
 /* =========================================================================
