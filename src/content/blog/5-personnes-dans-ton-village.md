@@ -151,15 +151,12 @@ Le village parfait n'existe pas. Le tien n'a pas à ressembler à celui d'à cô
 Un outil à remplir et enregistrer. Pour chaque type de présence, une zone pour mettre un nom, et une liste d'aides concrètes à demander. **Tes réponses sont sauvegardées sur ton appareil** — tu peux y revenir, imprimer ou télécharger ta carte quand tu veux.
 
 <div class="carte-print-zone">
-
 <header class="carte-print-header">
   <div class="brand">Parent <span class="un-jour">un jour</span></div>
   <h2>La carte de mon village</h2>
   <div class="print-subtitle">à remplir avant l'arrivée de bébé</div>
 </header>
-
 <div class="carte-interactive" id="carte-village">
-
 <div class="carte-type">
   <div class="carte-type-header">
     <span class="carte-type-num">01</span>
@@ -184,7 +181,6 @@ Un outil à remplir et enregistrer. Pour chaque type de présence, une zone pour
     </div>
   </div>
 </div>
-
 <div class="carte-type">
   <div class="carte-type-header">
     <span class="carte-type-num">02</span>
@@ -200,7 +196,6 @@ Un outil à remplir et enregistrer. Pour chaque type de présence, une zone pour
     <div class="carte-ask-zone">
       <span class="carte-label">Aides à demander</span>
       <ul class="carte-accordion">
-
         <li class="carte-accordion-item">
           <button class="carte-accordion-header" type="button" aria-expanded="false" aria-controls="t2-acc-r">
             <span>Repas et alimentation <span class="carte-accordion-count">3 idées</span></span>
@@ -214,7 +209,6 @@ Un outil à remplir et enregistrer. Pour chaque type de présence, une zone pour
             </ul>
           </div>
         </li>
-
         <li class="carte-accordion-item">
           <button class="carte-accordion-header" type="button" aria-expanded="false" aria-controls="t2-acc-m">
             <span>Maison et logistique <span class="carte-accordion-count">5 idées</span></span>
@@ -230,7 +224,6 @@ Un outil à remplir et enregistrer. Pour chaque type de présence, une zone pour
             </ul>
           </div>
         </li>
-
         <li class="carte-accordion-item">
           <button class="carte-accordion-header" type="button" aria-expanded="false" aria-controls="t2-acc-b">
             <span>Bébé et soins <span class="carte-accordion-count">3 idées</span></span>
@@ -244,7 +237,6 @@ Un outil à remplir et enregistrer. Pour chaque type de présence, une zone pour
             </ul>
           </div>
         </li>
-
         <li class="carte-accordion-item">
           <button class="carte-accordion-header" type="button" aria-expanded="false" aria-controls="t2-acc-a">
             <span>Le grand frère ou la grande sœur <span class="carte-accordion-count">4 idées</span></span>
@@ -259,7 +251,6 @@ Un outil à remplir et enregistrer. Pour chaque type de présence, une zone pour
             </ul>
           </div>
         </li>
-
         <li class="carte-accordion-item">
           <button class="carte-accordion-header" type="button" aria-expanded="false" aria-controls="t2-acc-d">
             <span>Courses et démarches <span class="carte-accordion-count">4 idées</span></span>
@@ -274,7 +265,6 @@ Un outil à remplir et enregistrer. Pour chaque type de présence, une zone pour
             </ul>
           </div>
         </li>
-
         <li class="carte-accordion-item">
           <button class="carte-accordion-header" type="button" aria-expanded="false" aria-controls="t2-acc-p">
             <span>Présence et entraide <span class="carte-accordion-count">3 idées</span></span>
@@ -289,12 +279,10 @@ Un outil à remplir et enregistrer. Pour chaque type de présence, une zone pour
             </ul>
           </div>
         </li>
-
       </ul>
     </div>
   </div>
 </div>
-
 <div class="carte-type">
   <div class="carte-type-header">
     <span class="carte-type-num">03</span>
@@ -319,7 +307,6 @@ Un outil à remplir et enregistrer. Pour chaque type de présence, une zone pour
     </div>
   </div>
 </div>
-
 <div class="carte-type">
   <div class="carte-type-header">
     <span class="carte-type-num">04</span>
@@ -344,7 +331,6 @@ Un outil à remplir et enregistrer. Pour chaque type de présence, une zone pour
     </div>
   </div>
 </div>
-
 <div class="carte-type">
   <div class="carte-type-header">
     <span class="carte-type-num">05</span>
@@ -369,9 +355,7 @@ Un outil à remplir et enregistrer. Pour chaque type de présence, une zone pour
     </div>
   </div>
 </div>
-
 </div>
-
 </div>
 
 <div class="carte-save-status" id="carte-save-status" role="status" aria-live="polite"></div>

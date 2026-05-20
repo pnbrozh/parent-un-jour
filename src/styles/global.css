@@ -1008,6 +1008,7 @@ section { padding: 100px 40px; }
   margin: 0 auto;
   padding: 0 24px 60px;
 }
+.sources h3,
 .sources h4 {
   font-family: 'Georgia', serif;
   font-size: 16px;
