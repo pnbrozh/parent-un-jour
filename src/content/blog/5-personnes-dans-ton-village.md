@@ -362,8 +362,11 @@ Un outil à remplir et enregistrer. Pour chaque type de présence, une zone pour
 
 <div class="carte-actions">
   <button class="carte-btn carte-btn-primary" type="button" data-carte-action="print"><span aria-hidden="true">🖨</span> Imprimer ma carte</button>
-  <a class="carte-btn carte-btn-secondary" href="/pdf/la-carte-de-mon-village.pdf" download><span aria-hidden="true">⬇</span> Télécharger le modèle vierge</a>
   <button class="carte-btn carte-btn-secondary" type="button" data-carte-action="reset"><span aria-hidden="true">↺</span> Tout effacer</button>
+</div>
+
+<div class="carte-actions carte-actions-alt">
+  <a class="carte-btn carte-btn-secondary" href="/pdf/la-carte-de-mon-village.pdf" download><span aria-hidden="true">⬇</span> Télécharger le modèle vierge</a>
 </div>
 
 <div class="highlight-block">

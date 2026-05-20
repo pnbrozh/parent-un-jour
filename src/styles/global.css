@@ -1260,6 +1260,9 @@ section { padding: 100px 40px; }
   margin: 28px 0 8px;
   flex-wrap: nowrap;
 }
+/* Rangée alternative (Télécharger le modèle vierge), placée
+   visuellement en-dessous des actions du formulaire rempli. */
+.carte-actions-alt { margin-top: 0; margin-bottom: 8px; }
 .carte-btn {
   display: inline-flex;
   align-items: center;
