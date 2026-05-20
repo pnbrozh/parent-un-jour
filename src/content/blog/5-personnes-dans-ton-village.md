@@ -12,6 +12,7 @@ thumbnailEmoji: "🤝"
 readingTime: "6 min"
 heroLabel: "Le journal du village — Article #02"
 heroSubtitle: "qui mettre dans ton cercle"
+interactiveCarte: true
 tags:
   - village périnatal Québec
   - soutien parental Montréal
@@ -147,12 +148,238 @@ Le village parfait n'existe pas. Le tien n'a pas à ressembler à celui d'à cô
 
 <p class="h2-accent">la carte de mon village</p>
 
-Un outil à imprimer et remplir. Pour chaque type de présence, une zone pour mettre un nom, et une liste d'aides concrètes à demander.
+Un outil à remplir et enregistrer. Pour chaque type de présence, une zone pour mettre un nom, et une liste d'aides concrètes à demander. **Tes réponses sont sauvegardées sur ton appareil** — tu peux y revenir, imprimer ou télécharger ta carte quand tu veux.
 
-<div class="terra-box" style="text-align: center;">
-<strong>La carte de mon village</strong><br/>
-Un outil à imprimer et remplir. Pour chaque type de présence, une zone pour mettre un nom, et une liste d'aides concrètes à demander.<br/><br/>
-<a href="/pdf/la-carte-de-mon-village.pdf" download class="btn btn-terra">⬇ Télécharger la carte (PDF)</a>
+<div class="carte-print-zone">
+
+<header class="carte-print-header">
+  <div class="brand">Parent <span class="un-jour">un jour</span></div>
+  <h2>La carte de mon village</h2>
+  <div class="print-subtitle">à remplir avant l'arrivée de bébé</div>
+</header>
+
+<div class="carte-interactive" id="carte-village">
+
+<div class="carte-type">
+  <div class="carte-type-header">
+    <span class="carte-type-num">01</span>
+    <span class="carte-type-title">Le soutien médical et périnatal</span>
+  </div>
+  <div class="carte-type-body">
+    <div class="carte-name-zone">
+      <span class="carte-label" id="t1-name-label">Qui&nbsp;?</span>
+      <input type="text" class="carte-name-input" data-key="t1-n1" aria-labelledby="t1-name-label" placeholder="un nom, ou un point d'interrogation">
+      <input type="text" class="carte-name-input" data-key="t1-n2" aria-label="Deuxième nom — soutien médical et périnatal">
+      <input type="text" class="carte-name-input" data-key="t1-n3" aria-label="Troisième nom — soutien médical et périnatal">
+    </div>
+    <div class="carte-ask-zone">
+      <span class="carte-label">Mes actions préparatoires</span>
+      <ul class="carte-ask-list">
+        <li><input type="checkbox" id="t1-c1" data-key="t1-c1"><label for="t1-c1">Mon suivi de grossesse</label></li>
+        <li><input type="checkbox" id="t1-c2" data-key="t1-c2"><label for="t1-c2">Visiter le lieu d'accouchement</label></li>
+        <li><input type="checkbox" id="t1-c3" data-key="t1-c3"><label for="t1-c3">Préparer mes questions pour mon médecin</label></li>
+        <li><input type="checkbox" id="t1-c4" data-key="t1-c4"><label for="t1-c4">Demander une marraine d'allaitement (Nourri-Source)</label></li>
+        <li class="carte-empty-line"><input type="checkbox" id="t1-c5" data-key="t1-c5" aria-label="Cocher la case correspondant à mon ajout libre"><input type="text" data-key="t1-c5-txt" placeholder="autre…" aria-label="Ajouter une action personnalisée — soutien médical"></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="carte-type">
+  <div class="carte-type-header">
+    <span class="carte-type-num">02</span>
+    <span class="carte-type-title">Le soutien du quotidien</span>
+  </div>
+  <div class="carte-type-body">
+    <div class="carte-name-zone">
+      <span class="carte-label" id="t2-name-label">Qui&nbsp;?</span>
+      <input type="text" class="carte-name-input" data-key="t2-n1" aria-labelledby="t2-name-label" placeholder="un nom, ou un point d'interrogation">
+      <input type="text" class="carte-name-input" data-key="t2-n2" aria-label="Deuxième nom — soutien du quotidien">
+      <input type="text" class="carte-name-input" data-key="t2-n3" aria-label="Troisième nom — soutien du quotidien">
+    </div>
+    <div class="carte-ask-zone">
+      <span class="carte-label">Aides à demander</span>
+      <ul class="carte-accordion">
+
+        <li class="carte-accordion-item">
+          <button class="carte-accordion-header" type="button" aria-expanded="false" aria-controls="t2-acc-r">
+            <span>Repas et alimentation <span class="carte-accordion-count">3 idées</span></span>
+            <span class="chev-acc" aria-hidden="true">›</span>
+          </button>
+          <div class="carte-accordion-body" id="t2-acc-r">
+            <ul class="carte-ask-list">
+              <li><input type="checkbox" id="t2-r1" data-key="t2-r1"><label for="t2-r1">Un repas livré ou cuisiné (frais ou congelé)</label></li>
+              <li><input type="checkbox" id="t2-r2" data-key="t2-r2"><label for="t2-r2">Faire l'épicerie ou ramener quelques produits frais</label></li>
+              <li><input type="checkbox" id="t2-r3" data-key="t2-r3"><label for="t2-r3">Apporter une collation, un café, un fruit</label></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="carte-accordion-item">
+          <button class="carte-accordion-header" type="button" aria-expanded="false" aria-controls="t2-acc-m">
+            <span>Maison et logistique <span class="carte-accordion-count">5 idées</span></span>
+            <span class="chev-acc" aria-hidden="true">›</span>
+          </button>
+          <div class="carte-accordion-body" id="t2-acc-m">
+            <ul class="carte-ask-list">
+              <li><input type="checkbox" id="t2-m1" data-key="t2-m1"><label for="t2-m1">Une brassée de linge (lavée, pliée, rangée)</label></li>
+              <li><input type="checkbox" id="t2-m2" data-key="t2-m2"><label for="t2-m2">Faire la vaisselle, vider le lave-vaisselle</label></li>
+              <li><input type="checkbox" id="t2-m3" data-key="t2-m3"><label for="t2-m3">Sortir les poubelles, le recyclage</label></li>
+              <li><input type="checkbox" id="t2-m4" data-key="t2-m4"><label for="t2-m4">Passer l'aspirateur, un coup de balai rapide</label></li>
+              <li><input type="checkbox" id="t2-m5" data-key="t2-m5"><label for="t2-m5">Changer la litière, sortir le chien</label></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="carte-accordion-item">
+          <button class="carte-accordion-header" type="button" aria-expanded="false" aria-controls="t2-acc-b">
+            <span>Bébé et soins <span class="carte-accordion-count">3 idées</span></span>
+            <span class="chev-acc" aria-hidden="true">›</span>
+          </button>
+          <div class="carte-accordion-body" id="t2-acc-b">
+            <ul class="carte-ask-list">
+              <li><input type="checkbox" id="t2-b1" data-key="t2-b1"><label for="t2-b1">Garder bébé pendant que je dors une heure</label></li>
+              <li><input type="checkbox" id="t2-b2" data-key="t2-b2"><label for="t2-b2">Tenir bébé pendant que je prends une douche</label></li>
+              <li><input type="checkbox" id="t2-b3" data-key="t2-b3"><label for="t2-b3">Faire une promenade en poussette pendant que je récupère</label></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="carte-accordion-item">
+          <button class="carte-accordion-header" type="button" aria-expanded="false" aria-controls="t2-acc-a">
+            <span>Le grand frère ou la grande sœur <span class="carte-accordion-count">4 idées</span></span>
+            <span class="chev-acc" aria-hidden="true">›</span>
+          </button>
+          <div class="carte-accordion-body" id="t2-acc-a">
+            <ul class="carte-ask-list">
+              <li><input type="checkbox" id="t2-a1" data-key="t2-a1"><label for="t2-a1">Garder l'aîné·e une après-midi</label></li>
+              <li><input type="checkbox" id="t2-a2" data-key="t2-a2"><label for="t2-a2">Aller chercher ou emmener à la garderie ou à l'école</label></li>
+              <li><input type="checkbox" id="t2-a3" data-key="t2-a3"><label for="t2-a3">Emmener l'aîné·e au parc ou à une activité</label></li>
+              <li><input type="checkbox" id="t2-a4" data-key="t2-a4"><label for="t2-a4">Faire ses devoirs avec lui ou elle</label></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="carte-accordion-item">
+          <button class="carte-accordion-header" type="button" aria-expanded="false" aria-controls="t2-acc-d">
+            <span>Courses et démarches <span class="carte-accordion-count">4 idées</span></span>
+            <span class="chev-acc" aria-hidden="true">›</span>
+          </button>
+          <div class="carte-accordion-body" id="t2-acc-d">
+            <ul class="carte-ask-list">
+              <li><input type="checkbox" id="t2-d1" data-key="t2-d1"><label for="t2-d1">Aller à la pharmacie</label></li>
+              <li><input type="checkbox" id="t2-d2" data-key="t2-d2"><label for="t2-d2">Récupérer un colis</label></li>
+              <li><input type="checkbox" id="t2-d3" data-key="t2-d3"><label for="t2-d3">Déposer quelque chose à la poste</label></li>
+              <li><input type="checkbox" id="t2-d4" data-key="t2-d4"><label for="t2-d4">Conduire à un rendez-vous médical</label></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="carte-accordion-item">
+          <button class="carte-accordion-header" type="button" aria-expanded="false" aria-controls="t2-acc-p">
+            <span>Présence et entraide <span class="carte-accordion-count">3 idées</span></span>
+            <span class="chev-acc" aria-hidden="true">›</span>
+          </button>
+          <div class="carte-accordion-body" id="t2-acc-p">
+            <ul class="carte-ask-list">
+              <li><input type="checkbox" id="t2-p1" data-key="t2-p1"><label for="t2-p1">Venir prendre un café (voir du monde réellement)</label></li>
+              <li><input type="checkbox" id="t2-p2" data-key="t2-p2"><label for="t2-p2">M'accompagner à une promenade</label></li>
+              <li><input type="checkbox" id="t2-p3" data-key="t2-p3"><label for="t2-p3">Venir partager un repas (et le préparer ensemble)</label></li>
+              <li class="carte-empty-line"><input type="checkbox" id="t2-p4" data-key="t2-p4" aria-label="Cocher la case correspondant à mon ajout libre"><input type="text" data-key="t2-p4-txt" placeholder="autre…" aria-label="Ajouter une action personnalisée — présence et entraide"></li>
+            </ul>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="carte-type">
+  <div class="carte-type-header">
+    <span class="carte-type-num">03</span>
+    <span class="carte-type-title">Le soutien entre parents</span>
+  </div>
+  <div class="carte-type-body">
+    <div class="carte-name-zone">
+      <span class="carte-label" id="t3-name-label">Qui&nbsp;?</span>
+      <input type="text" class="carte-name-input" data-key="t3-n1" aria-labelledby="t3-name-label" placeholder="un nom, ou un point d'interrogation">
+      <input type="text" class="carte-name-input" data-key="t3-n2" aria-label="Deuxième nom — soutien entre parents">
+      <input type="text" class="carte-name-input" data-key="t3-n3" aria-label="Troisième nom — soutien entre parents">
+    </div>
+    <div class="carte-ask-zone">
+      <span class="carte-label">Actions à faire</span>
+      <ul class="carte-ask-list">
+        <li><input type="checkbox" id="t3-c1" data-key="t3-c1"><label for="t3-c1">M'inscrire à des cours prénataux</label></li>
+        <li><input type="checkbox" id="t3-c2" data-key="t3-c2"><label for="t3-c2">Rejoindre un groupe Facebook de parents de mon quartier</label></li>
+        <li><input type="checkbox" id="t3-c3" data-key="t3-c3"><label for="t3-c3">Repérer la halte-allaitement de mon secteur</label></li>
+        <li><input type="checkbox" id="t3-c4" data-key="t3-c4"><label for="t3-c4">Connecter avec d'autres parents que je connais</label></li>
+        <li class="carte-empty-line"><input type="checkbox" id="t3-c5" data-key="t3-c5" aria-label="Cocher la case correspondant à mon ajout libre"><input type="text" data-key="t3-c5-txt" placeholder="autre…" aria-label="Ajouter une action personnalisée — soutien entre parents"></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="carte-type">
+  <div class="carte-type-header">
+    <span class="carte-type-num">04</span>
+    <span class="carte-type-title">Le soutien émotionnel</span>
+  </div>
+  <div class="carte-type-body">
+    <div class="carte-name-zone">
+      <span class="carte-label" id="t4-name-label">Qui&nbsp;?</span>
+      <input type="text" class="carte-name-input" data-key="t4-n1" aria-labelledby="t4-name-label" placeholder="un nom, ou un point d'interrogation">
+      <input type="text" class="carte-name-input" data-key="t4-n2" aria-label="Deuxième nom — soutien émotionnel">
+      <input type="text" class="carte-name-input" data-key="t4-n3" aria-label="Troisième nom — soutien émotionnel">
+    </div>
+    <div class="carte-ask-zone">
+      <span class="carte-label">À anticiper</span>
+      <ul class="carte-ask-list">
+        <li><input type="checkbox" id="t4-c1" data-key="t4-c1"><label for="t4-c1">Identifier un psychologue, prendre rendez-vous en amont</label></li>
+        <li><input type="checkbox" id="t4-c2" data-key="t4-c2"><label for="t4-c2">En parler à mon médecin / ma sage-femme</label></li>
+        <li><input type="checkbox" id="t4-c3" data-key="t4-c3"><label for="t4-c3">Noter le 811, option 2 (Info-Social)</label></li>
+        <li><input type="checkbox" id="t4-c4" data-key="t4-c4"><label for="t4-c4">Explorer hypnose ou acupuncture, avec un pro de santé</label></li>
+        <li class="carte-empty-line"><input type="checkbox" id="t4-c5" data-key="t4-c5" aria-label="Cocher la case correspondant à mon ajout libre"><input type="text" data-key="t4-c5-txt" placeholder="autre…" aria-label="Ajouter une action personnalisée — soutien émotionnel"></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="carte-type">
+  <div class="carte-type-header">
+    <span class="carte-type-num">05</span>
+    <span class="carte-type-title">Le relais d'urgence</span>
+  </div>
+  <div class="carte-type-body">
+    <div class="carte-name-zone">
+      <span class="carte-label" id="t5-name-label">Qui&nbsp;?</span>
+      <input type="text" class="carte-name-input" data-key="t5-n1" aria-labelledby="t5-name-label" placeholder="un nom et son numéro">
+      <input type="text" class="carte-name-input" data-key="t5-n2" aria-label="Deuxième nom — relais d'urgence">
+      <input type="text" class="carte-name-input" data-key="t5-n3" aria-label="Troisième nom — relais d'urgence">
+    </div>
+    <div class="carte-ask-zone">
+      <span class="carte-label">À mettre en place</span>
+      <ul class="carte-ask-list">
+        <li><input type="checkbox" id="t5-c1" data-key="t5-c1"><label for="t5-c1">Ma personne d'urgence — qui appeler à l'aide tard le soir</label></li>
+        <li><input type="checkbox" id="t5-c2" data-key="t5-c2"><label for="t5-c2">811 (Info-Santé) · option 2 (Info-Social)</label></li>
+        <li><input type="checkbox" id="t5-c3" data-key="t5-c3"><label for="t5-c3">911 (urgence médicale)</label></li>
+        <li><input type="checkbox" id="t5-c4" data-key="t5-c4"><label for="t5-c4">211 (ressources sociocommunautaires)</label></li>
+        <li><input type="checkbox" id="t5-c5" data-key="t5-c5"><label for="t5-c5">Liste affichée sur le frigo</label></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</div>
+
+<div class="carte-save-status" id="carte-save-status" role="status" aria-live="polite"></div>
+
+<div class="carte-actions">
+  <button class="carte-btn carte-btn-primary" type="button" data-carte-action="print">🖨 Imprimer ma carte</button>
+  <a class="carte-btn carte-btn-secondary" href="/pdf/la-carte-de-mon-village.pdf" download>⬇ Télécharger le modèle vierge</a>
+  <button class="carte-btn carte-btn-secondary" type="button" data-carte-action="reset">↺ Tout effacer</button>
 </div>
 
 <div class="highlight-block">

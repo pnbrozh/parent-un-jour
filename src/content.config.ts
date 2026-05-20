@@ -44,6 +44,8 @@ const blog = defineCollection({
       text: z.string(),
       url: z.string().optional(),
     })).optional(),
+    // Active la carte interactive en fin d'article (5 cards remplissables, sauvegarde locale, impression)
+    interactiveCarte: z.boolean().default(false),
   }),
 });
 

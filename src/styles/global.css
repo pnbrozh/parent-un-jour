@@ -388,6 +388,14 @@ section { padding: 100px 40px; }
 .btn-terra { background: var(--terra); color: var(--white); }
 .btn-terra:hover { background: var(--slate); transform: translateY(-2px); }
 
+/* Override pour les boutons-liens dans le corps d'article :
+   sinon .article-body a (terra-ink + border-bottom) gagne en spécificité
+   et le texte du bouton devient illisible sur fond terra. */
+.article-body a.btn { color: var(--white); border-bottom: none; }
+.article-body a.btn:hover { border-bottom: none; color: var(--white); }
+.article-body a.btn-outline { color: var(--slate); }
+.article-body a.btn-outline:hover { color: var(--white); }
+
 /* ===== HERO (shared across pages) ===== */
 .hero {
   min-height: 100vh;
@@ -1109,6 +1117,320 @@ section { padding: 100px 40px; }
   display: block !important;
 }
 
+/* ===========================================
+   CARTE INTERACTIVE (article #02)
+   Activée par frontmatter interactiveCarte: true
+   =========================================== */
+.carte-interactive {
+  margin: 36px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+.carte-type {
+  background: var(--white);
+  border: 1px solid var(--sage-light);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(92, 106, 115, 0.04);
+}
+.carte-type-header {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+  border-bottom: 1px dashed var(--sage-soft);
+}
+.carte-type-num {
+  font-family: Georgia, serif;
+  font-size: 32px;
+  color: var(--terra-ink);
+  line-height: 1;
+  min-width: 40px;
+}
+.carte-type-title {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  color: var(--slate);
+  font-weight: 400;
+}
+.carte-type-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+@media (max-width: 640px) {
+  .carte-type-body { grid-template-columns: 1fr; }
+}
+.carte-name-zone {
+  background: var(--cream);
+  padding: 14px 16px;
+  border-radius: 8px;
+}
+.carte-name-zone .carte-label,
+.carte-ask-zone .carte-label {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--terra-ink);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 10px;
+}
+.carte-name-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--sage);
+  background: transparent;
+  padding: 6px 0;
+  font-family: Lato, sans-serif;
+  font-size: 15px;
+  color: var(--slate);
+  margin-bottom: 6px;
+}
+.carte-name-input:focus {
+  outline: none;
+  border-bottom-color: var(--terra-ink);
+  border-bottom-width: 2px;
+}
+.carte-name-input::placeholder {
+  color: var(--sage-ink);
+  font-style: italic;
+  opacity: 0.65;
+}
+.carte-ask-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.carte-ask-list li {
+  padding: 6px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+.carte-ask-list input[type="checkbox"] {
+  margin-top: 4px;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--terra);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.carte-ask-list input[type="checkbox"]:focus-visible {
+  outline: 2px solid var(--terra-ink);
+  outline-offset: 2px;
+}
+.carte-ask-list label {
+  cursor: pointer;
+  color: var(--slate);
+}
+.carte-ask-list .carte-empty-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+}
+.carte-ask-list .carte-empty-line input[type="text"] {
+  flex: 1;
+  border: none;
+  border-bottom: 1px dashed var(--sage-soft);
+  background: transparent;
+  padding: 4px 0;
+  font-family: Lato, sans-serif;
+  font-size: 14px;
+  color: var(--slate);
+}
+.carte-ask-list .carte-empty-line input[type="text"]:focus {
+  outline: none;
+  border-bottom-color: var(--terra-ink);
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+}
+.carte-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 28px 0 8px;
+  flex-wrap: wrap;
+}
+.carte-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-size: 13px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  font-family: Lato, sans-serif;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+.carte-btn-primary {
+  background: var(--terra);
+  color: var(--white);
+}
+.carte-btn-primary:hover {
+  background: var(--slate);
+  transform: translateY(-1px);
+}
+.carte-btn-secondary {
+  background: transparent;
+  color: var(--slate);
+  border: 1px solid var(--sage);
+}
+.carte-btn-secondary:hover { background: var(--sage-light); }
+.carte-btn:focus-visible {
+  outline: 3px solid var(--terra-ink);
+  outline-offset: 2px;
+}
+/* surclasse l'effet « link dans article-body » sur les boutons */
+.article-body .carte-btn { border-bottom: none; }
+.article-body a.carte-btn-primary { color: var(--white); }
+.article-body a.carte-btn-secondary { color: var(--slate); }
+
+.carte-save-status {
+  text-align: center;
+  font-size: 13px;
+  color: var(--sage-ink);
+  font-style: italic;
+  min-height: 20px;
+  margin-bottom: 8px;
+}
+
+/* ACCORDÉONS (utilisé dans la card 02) */
+.carte-accordion {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.carte-accordion-item {
+  border-bottom: 1px solid var(--sage-light);
+  margin-bottom: 0;
+}
+.carte-accordion-item:last-child { border-bottom: none; }
+.carte-accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 10px 0;
+  cursor: pointer;
+  font-family: Lato, sans-serif;
+  font-size: 13px;
+  color: var(--slate);
+  text-align: left;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+.carte-accordion-header:hover { color: var(--terra-ink); }
+.carte-accordion-header:focus-visible {
+  outline: 3px solid var(--terra-ink);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.carte-accordion-header .chev-acc {
+  transition: transform 0.3s;
+  color: var(--terra-ink);
+  font-weight: 400;
+  font-size: 18px;
+}
+.carte-accordion-header[aria-expanded="true"] .chev-acc {
+  transform: rotate(90deg);
+}
+.carte-accordion-count {
+  font-size: 11px;
+  color: var(--sage-ink);
+  font-weight: 400;
+  margin-left: 8px;
+  font-style: italic;
+}
+.carte-accordion-body {
+  display: none;
+  padding: 4px 0 10px 6px;
+}
+.carte-accordion-item.open .carte-accordion-body {
+  display: block;
+}
+
+/* En-tête imprimé : caché à l'écran, affiché lors du print */
+.carte-print-header { display: none; }
+
+/* === IMPRESSION : seule la carte s'imprime === */
+@media print {
+  @page { margin: 14mm 12mm; }
+  body { background: white !important; font-size: 11pt; }
+  body * { visibility: hidden !important; }
+  .carte-print-zone, .carte-print-zone * { visibility: visible !important; }
+  .carte-print-zone {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    padding: 0;
+  }
+  .carte-print-header {
+    display: block !important;
+    text-align: center;
+    margin-bottom: 8mm;
+    padding-bottom: 5mm;
+    border-bottom: 1px solid var(--sage-light);
+  }
+  .carte-print-header .brand {
+    font-family: Georgia, serif;
+    font-size: 12pt;
+    color: var(--slate);
+    margin-bottom: 3mm;
+  }
+  .carte-print-header .brand .un-jour {
+    font-family: 'La Belle Aurore', cursive;
+    color: var(--terra);
+    font-size: 16pt;
+    margin-left: 2px;
+  }
+  .carte-print-header h2 {
+    font-family: Georgia, serif;
+    font-size: 20pt;
+    color: var(--slate);
+    font-weight: 400;
+    margin: 0 0 2mm;
+  }
+  .carte-print-header .print-subtitle {
+    font-family: 'La Belle Aurore', cursive;
+    color: var(--terra);
+    font-size: 14pt;
+  }
+  .carte-type {
+    page-break-inside: avoid;
+    border: 1px solid var(--sage-light);
+    padding: 4mm 5mm;
+    border-radius: 3mm;
+    margin-bottom: 4mm;
+    box-shadow: none;
+  }
+  .carte-actions, .carte-save-status { display: none !important; }
+  /* déplier tous les accordéons à l'impression */
+  .carte-accordion-body { display: block !important; }
+  .carte-accordion-header { cursor: default; }
+  .chev-acc { display: none !important; }
+  .carte-name-input {
+    color: var(--slate);
+    font-size: 11pt;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .carte-ask-list input[type="checkbox"]:checked + label { font-weight: 700; }
+}
+
 @media (max-width: 640px) {
   .article-hero { padding: 130px 20px 60px; }
   .article-body { padding: 40px 20px 60px; }
@@ -1116,6 +1438,9 @@ section { padding: 100px 40px; }
   .article-body .stats-row { grid-template-columns: 1fr; }
   .person-card { padding: 24px 20px; }
   .cta-bottom { padding: 56px 20px; }
+  .carte-type { padding: 20px 18px; }
+  .carte-type-num { font-size: 26px; }
+  .carte-type-title { font-size: 17px; }
 }
 
 /* ===== FOOTER ===== */

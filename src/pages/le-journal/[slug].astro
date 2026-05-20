@@ -71,4 +71,118 @@ const monthYear = post.data.publishDate
     <a href="https://www.instagram.com/parent.un.jour" class="btn btn-terra" target="_blank" rel="noopener">Suivre sur Instagram</a>
   </section>
 
+  {post.data.interactiveCarte && (
+    <script is:inline>
+      (function () {
+        const carte = document.getElementById('carte-village');
+        if (!carte) return;
+
+        const STORAGE_KEY = 'parent-un-jour-carte-village';
+        const status = document.getElementById('carte-save-status');
+        const fields = carte.querySelectorAll('[data-key]');
+        let timeout;
+
+        function feedback(msg) {
+          if (!status) return;
+          status.textContent = msg;
+          clearTimeout(timeout);
+          timeout = setTimeout(() => { status.textContent = ''; }, 2200);
+        }
+
+        // --- Sauvegarde / chargement ---
+        function chargerCarte() {
+          try {
+            const raw = localStorage.getItem(STORAGE_KEY);
+            if (!raw) return;
+            const data = JSON.parse(raw);
+            fields.forEach((el) => {
+              const v = data[el.dataset.key];
+              if (v === undefined) return;
+              if (el.type === 'checkbox') el.checked = !!v;
+              else el.value = v;
+            });
+            // Si l'utilisateur avait coché des items à l'intérieur d'un accordéon,
+            // on ouvre l'accordéon pour qu'il voie ses cases cochées
+            carte.querySelectorAll('.carte-accordion-item').forEach((item) => {
+              const hasChecked = item.querySelector('input[type="checkbox"]:checked');
+              const hasFilled = Array.from(item.querySelectorAll('input[type="text"]')).some((i) => i.value.trim() !== '');
+              if (hasChecked || hasFilled) {
+                item.classList.add('open');
+                const btn = item.querySelector('.carte-accordion-header');
+                if (btn) btn.setAttribute('aria-expanded', 'true');
+              }
+            });
+          } catch (e) { /* localStorage indispo (mode privé) */ }
+        }
+
+        function sauvegarderCarte() {
+          const data = {};
+          fields.forEach((el) => {
+            data[el.dataset.key] = el.type === 'checkbox' ? el.checked : el.value;
+          });
+          try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+            feedback('✓ Sauvegardé sur ton appareil');
+          } catch (e) {
+            feedback("Impossible d'enregistrer (navigation privée ?)");
+          }
+        }
+
+        fields.forEach((el) => {
+          el.addEventListener('input', sauvegarderCarte);
+          el.addEventListener('change', sauvegarderCarte);
+        });
+
+        // --- Accordéons ---
+        carte.querySelectorAll('.carte-accordion-header').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const item = btn.parentElement;
+            const isOpen = item.classList.toggle('open');
+            btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          });
+        });
+
+        // --- Actions (impression + reset) ---
+        document.querySelectorAll('[data-carte-action]').forEach((btn) => {
+          btn.addEventListener('click', (e) => {
+            const action = btn.dataset.carteAction;
+            if (action === 'print') {
+              // ouvrir tous les accordéons avant impression pour que tout sorte
+              const wasOpen = [];
+              carte.querySelectorAll('.carte-accordion-item').forEach((item, idx) => {
+                wasOpen[idx] = item.classList.contains('open');
+                item.classList.add('open');
+              });
+              window.print();
+              // remettre l'état après impression (timeout pour laisser le rendu finir)
+              setTimeout(() => {
+                carte.querySelectorAll('.carte-accordion-item').forEach((item, idx) => {
+                  if (!wasOpen[idx]) item.classList.remove('open');
+                });
+              }, 500);
+            }
+            if (action === 'reset') {
+              if (!confirm('Effacer toute ta carte ? Cette action est définitive.')) return;
+              fields.forEach((el) => {
+                if (el.type === 'checkbox') el.checked = false;
+                else el.value = '';
+              });
+              try { localStorage.removeItem(STORAGE_KEY); } catch (e) { /* ignore */ }
+              // refermer les accordéons
+              carte.querySelectorAll('.carte-accordion-item').forEach((item) => {
+                item.classList.remove('open');
+                const h = item.querySelector('.carte-accordion-header');
+                if (h) h.setAttribute('aria-expanded', 'false');
+              });
+              feedback('Carte réinitialisée');
+            }
+          });
+        });
+
+        // Init
+        chargerCarte();
+      })();
+    </script>
+  )}
+
 </Layout>
