@@ -1254,19 +1254,21 @@ section { padding: 100px 40px; }
 }
 .carte-actions {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   justify-content: center;
+  align-items: center;
   margin: 28px 0 8px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 .carte-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  padding: 12px 24px;
+  padding: 12px 20px;
   border-radius: 999px;
-  font-size: 13px;
-  letter-spacing: 0.8px;
+  font-size: 12.5px;
+  letter-spacing: 0.6px;
   text-transform: uppercase;
   font-weight: 700;
   cursor: pointer;
@@ -1274,6 +1276,14 @@ section { padding: 100px 40px; }
   font-family: Lato, sans-serif;
   transition: all 0.3s;
   text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+/* Sur très petit écran (mobile portrait), on autorise le wrap
+   et on empile pour rester lisible — sinon les 3 boutons débordent. */
+@media (max-width: 600px) {
+  .carte-actions { flex-wrap: wrap; }
+  .carte-btn { white-space: normal; padding: 12px 16px; font-size: 12px; }
 }
 .carte-btn-primary {
   background: var(--terra);
