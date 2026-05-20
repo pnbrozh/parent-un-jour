@@ -1284,11 +1284,15 @@ section { padding: 100px 40px; }
   transform: translateY(-1px);
 }
 .carte-btn-secondary {
-  background: transparent;
-  color: var(--slate);
-  border: 1px solid var(--sage);
+  background: var(--terra-light);
+  color: var(--terra-ink);
+  border: none;
 }
-.carte-btn-secondary:hover { background: var(--sage-light); }
+.carte-btn-secondary:hover {
+  background: var(--terra-soft);
+  color: var(--white);
+  transform: translateY(-1px);
+}
 .carte-btn:focus-visible {
   outline: 3px solid var(--terra-ink);
   outline-offset: 2px;
@@ -1296,7 +1300,8 @@ section { padding: 100px 40px; }
 /* surclasse l'effet « link dans article-body » sur les boutons */
 .article-body .carte-btn { border-bottom: none; }
 .article-body a.carte-btn-primary { color: var(--white); }
-.article-body a.carte-btn-secondary { color: var(--slate); }
+.article-body a.carte-btn-secondary { color: var(--terra-ink); }
+.article-body a.carte-btn-secondary:hover { color: var(--white); }
 
 .carte-save-status {
   text-align: center;
